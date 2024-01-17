@@ -5,6 +5,7 @@
     "pages/RegistrationSuccessPage",
     "pages/PrivacyPage",
     "pages/CustomerServicePage",
-    "pages/CatalogPage"
+    "pages/CatalogPage",
+    "pages/TextPage"
   ]
 }
