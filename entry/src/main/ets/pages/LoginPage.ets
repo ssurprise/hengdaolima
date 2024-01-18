@@ -87,7 +87,17 @@ struct LoginPage {
         .width("30%")
         .textAlign(TextAlign.Center)
         .onClick(() => {
-          router.pushUrl({ url: CommonConstants.ROUTER_Text_PAGE_URL, params: { index: "login" } })
+          router.pushUrl({ url: CommonConstants.ROUTER_TEXT_PAGE_URL, params: { index: "login" } })
+        })
+      Text("图像")
+        .fontSize($r('app.float.title_text_size'))
+        .fontColor($r('app.color.title'))
+        .fontWeight(FontWeight.Regular)
+        .height("24vp")
+        .width("30%")
+        .textAlign(TextAlign.Center)
+        .onClick(() => {
+          router.pushUrl({ url: CommonConstants.ROUTER_IMAGE_PAGE_URL, params: { index: "login" } })
         })
     }.width(CommonConstants.FULL_WIDTH_PERCENT)
     .height($r('app.float.title_height'))

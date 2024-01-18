@@ -6,6 +6,7 @@
     "pages/PrivacyPage",
     "pages/CustomerServicePage",
     "pages/CatalogPage",
-    "pages/TextPage"
+    "pages/TextPage",
+    "pages/ImagePage"
   ]
 }
