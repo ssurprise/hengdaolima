@@ -3,7 +3,6 @@ import { TitleComp } from '../view/TitleComp'
 @Entry
 @Component
 struct RowPage {
-  @State message: string = 'Hello World'
 
   build() {
     Column() {

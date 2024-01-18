@@ -8,6 +8,8 @@
     "pages/CatalogPage",
     "pages/TextPage",
     "pages/ImagePage",
-    "pages/RowPage"
+    "pages/RowPage",
+    "pages/ListPage",
+    "pages/GridPage"
   ]
 }
