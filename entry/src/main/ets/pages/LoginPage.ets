@@ -74,7 +74,6 @@ struct LoginPage {
         .fontColor($r('app.color.title'))
         .fontWeight(FontWeight.Regular)
         .height("24vp")
-        .width("30%")
         .textAlign(TextAlign.Center)
         .onClick(() => {
           router.pushUrl({ url: CommonConstants.ROUTER_CATALOG_PAGE_URL, params: { index: "login" } })
@@ -84,7 +83,6 @@ struct LoginPage {
         .fontColor($r('app.color.title'))
         .fontWeight(FontWeight.Regular)
         .height("24vp")
-        .width("30%")
         .textAlign(TextAlign.Center)
         .onClick(() => {
           router.pushUrl({ url: CommonConstants.ROUTER_TEXT_PAGE_URL, params: { index: "login" } })
@@ -94,12 +92,22 @@ struct LoginPage {
         .fontColor($r('app.color.title'))
         .fontWeight(FontWeight.Regular)
         .height("24vp")
-        .width("30%")
         .textAlign(TextAlign.Center)
         .onClick(() => {
           router.pushUrl({ url: CommonConstants.ROUTER_IMAGE_PAGE_URL, params: { index: "login" } })
         })
-    }.width(CommonConstants.FULL_WIDTH_PERCENT)
+      Text("Row")
+        .fontSize($r('app.float.title_text_size'))
+        .fontColor($r('app.color.title'))
+        .fontWeight(FontWeight.Regular)
+        .height("24vp")
+        .textAlign(TextAlign.Center)
+        .onClick(() => {
+          router.pushUrl({ url: CommonConstants.ROUTER_ROW_PAGE_URL, params: { index: "login" } })
+        })
+    }
+    .width(CommonConstants.FULL_WIDTH_PERCENT)
     .height($r('app.float.title_height'))
+    .justifyContent(FlexAlign.SpaceEvenly)
   }
 }

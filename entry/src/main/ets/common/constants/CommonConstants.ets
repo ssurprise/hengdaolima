@@ -204,6 +204,7 @@ export class CommonConstants {
   static readonly ROUTER_CATALOG_PAGE_URL: string = 'pages/CatalogPage';
   static readonly ROUTER_TEXT_PAGE_URL: string = 'pages/TextPage';
   static readonly ROUTER_IMAGE_PAGE_URL: string = 'pages/ImagePage';
+  static readonly ROUTER_ROW_PAGE_URL: string = 'pages/RowPage';
 
   /**
    * Percent of the text input.
