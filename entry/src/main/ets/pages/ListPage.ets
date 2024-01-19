@@ -7,7 +7,7 @@ struct ListsPage {
 
   build() {
     Column() {
-      TitleComp()
+      TitleComp('List')
       List({ space: 10 }) {
         ForEach(this.arr, (item: number) => {
           ListItem() {
@@ -38,7 +38,8 @@ struct ListsPage {
       })
       .onScrollStop(() => {
         console.log('ListsPage', 'onScrollStop')
-      }).padding('12vp')
+      })
+      .padding('12vp')
     }
     .height('100%')
     .width('100%')

@@ -1,16 +1,14 @@
 import router from '@ohos.router';
 import { CommonConstants } from '../common/constants/CommonConstants';
-import MinePageContentComponent from '../view/MinePageContentComponent';
+import MinePageContentComponent from './MinePageContentComponent';
 
 /**
  * Personal Center page, displaying personal information and app-related settings.
  */
-@Entry
 @Component
-struct MinePage {
+export struct MineComponent {
   build() {
     Column() {
-      this.Title()
       Scroll() {
         GridRow({
           columns: {
@@ -58,27 +56,5 @@ struct MinePage {
     }
     .alignItems(HorizontalAlign.Center)
     .backgroundColor($r('app.color.login_page_background'))
-  }
-
-  @Builder Title() {
-    Row() {
-      Image($r('app.media.ic_back'))
-        .width($r('app.float.image_size'))
-        .height($r('app.float.image_size'))
-        .margin({
-          left: $r('app.float.image_margin_left'),
-          right: $r('app.float.image_margin_right')
-        })
-        .onClick(() => {
-          router.back();
-        })
-
-      Text($r('app.string.mine_page_title'))
-        .fontSize($r('app.float.title_text_size'))
-        .fontColor($r('app.color.title'))
-        .fontWeight(CommonConstants.TITLE_FONT_WEIGHT)
-    }
-    .width(CommonConstants.FULL_WIDTH_PERCENT)
-    .height($r('app.float.title_height'))
   }
 }

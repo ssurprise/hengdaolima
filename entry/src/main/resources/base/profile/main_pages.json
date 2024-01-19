@@ -1,15 +1,15 @@
 {
   "src": [
     "pages/LoginPage",
-    "pages/MinePage",
     "pages/RegistrationSuccessPage",
     "pages/PrivacyPage",
     "pages/CustomerServicePage",
-    "pages/CatalogPage",
     "pages/TextPage",
     "pages/ImagePage",
     "pages/RowPage",
     "pages/ListPage",
-    "pages/GridPage"
+    "pages/GridPage",
+    "pages/MainPage",
+    "pages/StackPage"
   ]
 }

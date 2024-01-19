@@ -6,7 +6,7 @@ struct RowPage {
 
   build() {
     Column() {
-      TitleComp().height("56vp").backgroundColor(0xffffff)
+      TitleComp('Row').height("56vp").backgroundColor(0xffffff)
 
       Row() {
         Text("aaaa")

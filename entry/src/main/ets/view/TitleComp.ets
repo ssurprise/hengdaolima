@@ -2,6 +2,12 @@ import router from '@ohos.router';
 
 @Component
 export struct TitleComp {
+  private titleName: String | Resource = $r("app.string.title")
+
+  constructor(titleName: String | Resource) {
+    super()
+    this.titleName = titleName
+  }
 
   /**
    * In low-code mode, do not add anything to the build function, as it will be
@@ -20,7 +26,8 @@ export struct TitleComp {
           .onClick(() => {
             router.back();
           })
-        Text($r("app.string.title"))
+        // @ts-ignore
+        Text(this.titleName)
           .fontSize($r("app.float.title_text_size"))
           .fontColor($r("app.color.title"))
           .fontStyle(FontStyle.Normal)

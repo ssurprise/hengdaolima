@@ -24,8 +24,6 @@ struct LoginPage {
   build() {
     Column() {
       this.Title()
-      this.catalog()
-
       Scroll() {
         Column() {
           LoginComponent()
@@ -65,67 +63,5 @@ struct LoginPage {
     }
     .width(CommonConstants.FULL_WIDTH_PERCENT)
     .height($r('app.float.title_height'))
-  }
-
-  @Builder catalog() {
-    Row() {
-      Text($r('app.string.catalog_text'))
-        .fontSize($r('app.float.title_text_size'))
-        .fontColor($r('app.color.title'))
-        .fontWeight(FontWeight.Regular)
-        .height("24vp")
-        .textAlign(TextAlign.Center)
-        .onClick(() => {
-          router.pushUrl({ url: CommonConstants.ROUTER_CATALOG_PAGE_URL, params: { index: "login" } })
-        })
-      Text("文本")
-        .fontSize($r('app.float.title_text_size'))
-        .fontColor($r('app.color.title'))
-        .fontWeight(FontWeight.Regular)
-        .height("24vp")
-        .textAlign(TextAlign.Center)
-        .onClick(() => {
-          router.pushUrl({ url: CommonConstants.ROUTER_TEXT_PAGE_URL })
-        })
-      Text("图像")
-        .fontSize($r('app.float.title_text_size'))
-        .fontColor($r('app.color.title'))
-        .fontWeight(FontWeight.Regular)
-        .height("24vp")
-        .textAlign(TextAlign.Center)
-        .onClick(() => {
-          router.pushUrl({ url: CommonConstants.ROUTER_IMAGE_PAGE_URL })
-        })
-      Text("Row")
-        .fontSize($r('app.float.title_text_size'))
-        .fontColor($r('app.color.title'))
-        .fontWeight(FontWeight.Regular)
-        .height("24vp")
-        .textAlign(TextAlign.Center)
-        .onClick(() => {
-          router.pushUrl({ url: CommonConstants.ROUTER_ROW_PAGE_URL })
-        })
-      Text("List")
-        .fontSize($r('app.float.title_text_size'))
-        .fontColor($r('app.color.title'))
-        .fontWeight(FontWeight.Regular)
-        .height("24vp")
-        .textAlign(TextAlign.Center)
-        .onClick(() => {
-          router.pushUrl({ url: 'pages/ListPage' })
-        })
-      Text("Grid")
-        .fontSize($r('app.float.title_text_size'))
-        .fontColor($r('app.color.title'))
-        .fontWeight(FontWeight.Regular)
-        .height("24vp")
-        .textAlign(TextAlign.Center)
-        .onClick(() => {
-          router.pushUrl({ url: 'pages/GridPage' })
-        })
-    }
-    .width(CommonConstants.FULL_WIDTH_PERCENT)
-    .height($r('app.float.title_height'))
-    .justifyContent(FlexAlign.SpaceEvenly)
   }
 }
