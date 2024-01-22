@@ -7,10 +7,12 @@ export struct CatalogComponent {
   private mCatalogArray: Array<CatalogItemInfo> = [
     new CatalogItemInfo('文本', CommonConstants.ROUTER_TEXT_PAGE_URL),
     new CatalogItemInfo('图像', CommonConstants.ROUTER_IMAGE_PAGE_URL),
-    new CatalogItemInfo('Row', CommonConstants.ROUTER_ROW_PAGE_URL),
-    new CatalogItemInfo('List', 'pages/ListPage'),
-    new CatalogItemInfo('Grid', 'pages/GridPage'),
-    new CatalogItemInfo('Stack', 'pages/StackPage')
+    new CatalogItemInfo('线性-Row', CommonConstants.ROUTER_ROW_PAGE_URL),
+    new CatalogItemInfo('列表-List', 'pages/ListPage'),
+    new CatalogItemInfo('网格-Grid', 'pages/GridPage'),
+    new CatalogItemInfo('层叠-Stack', 'pages/StackPage'),
+    new CatalogItemInfo('单选-Radio', 'pages/RadioPage'),
+    new CatalogItemInfo('轮播-Swiper', 'pages/SwiperPage')
   ]
 
   build() {

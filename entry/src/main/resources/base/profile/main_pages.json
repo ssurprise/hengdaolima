@@ -10,6 +10,8 @@
     "pages/ListPage",
     "pages/GridPage",
     "pages/MainPage",
-    "pages/StackPage"
+    "pages/StackPage",
+    "pages/RadioPage",
+    "pages/SwiperPage"
   ]
 }

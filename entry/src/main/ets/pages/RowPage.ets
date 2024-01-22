@@ -6,7 +6,7 @@ struct RowPage {
 
   build() {
     Column() {
-      TitleComp('Row').height("56vp").backgroundColor(0xffffff)
+      TitleComp('线性布局-Row')
 
       Row() {
         Text("aaaa")

@@ -7,7 +7,7 @@ struct GridPage {
 
   build() {
     Column() {
-      TitleComp('Grid')
+      TitleComp('网格-Grid')
 
       Text("标准的3x3").fontSize("12vp").margin({ top: '15vp' })
       Grid() {
