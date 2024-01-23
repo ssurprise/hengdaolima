@@ -8,6 +8,7 @@
     "pages/ImagePage",
     "pages/RowPage",
     "pages/ListPage",
+    "pages/ListPage2",
     "pages/GridPage",
     "pages/MainPage",
     "pages/StackPage",
