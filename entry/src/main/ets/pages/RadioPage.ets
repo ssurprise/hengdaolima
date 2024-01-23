@@ -7,7 +7,7 @@ import promptAction from '@ohos.promptAction';
 struct RadioPage {
   build() {
     Column() {
-      TitleComp('单选框-Radio')
+      TitleComp({ titleName: '单选框-Radio' })
       Row() {
         Column() {
           Radio({ value: 'Radio1', group: 'radioGroup' })

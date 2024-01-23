@@ -7,7 +7,7 @@ struct ListsPage {
 
   build() {
     Column() {
-      TitleComp('List')
+      TitleComp({ titleName: 'List' })
       List({ space: 10 }) {
         ForEach(this.arr, (item: number) => {
           ListItem() {

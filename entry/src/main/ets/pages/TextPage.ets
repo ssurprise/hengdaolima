@@ -8,7 +8,7 @@ struct TextPage {
 
   build() {
     Column() {
-      TitleComp('Text').height("56vp").backgroundColor(0xffffff)
+      TitleComp({ titleName: 'Text' })
 
       Text(this.txt)
 

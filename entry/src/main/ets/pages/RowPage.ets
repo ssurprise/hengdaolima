@@ -3,10 +3,9 @@ import { TitleComp } from '../view/TitleComp'
 @Entry
 @Component
 struct RowPage {
-
   build() {
     Column() {
-      TitleComp('线性布局-Row')
+      TitleComp({ titleName: '线性布局-Row' })
 
       Row() {
         Text("aaaa")

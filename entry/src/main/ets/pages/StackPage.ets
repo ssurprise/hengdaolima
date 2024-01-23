@@ -8,7 +8,7 @@ export struct StackPage {
 
   build() {
     Column() {
-      TitleComp('Stack')
+      TitleComp({ titleName: '层叠布局-Stack' })
 
       Stack({}) {
         Column() {

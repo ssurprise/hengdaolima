@@ -12,6 +12,8 @@
     "pages/MainPage",
     "pages/StackPage",
     "pages/RadioPage",
-    "pages/SwiperPage"
+    "pages/SwiperPage",
+    "pages/ProgressPage",
+    "pages/TextInputPage"
   ]
 }

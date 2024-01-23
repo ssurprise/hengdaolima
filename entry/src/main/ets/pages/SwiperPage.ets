@@ -11,7 +11,7 @@ struct SwiperPage {
 
   build() {
     Column() {
-      TitleComp('Stack')
+      TitleComp({ titleName: 'Swiper' })
       Swiper(this.swiperController) {
         Text("0")
           .width('60%')

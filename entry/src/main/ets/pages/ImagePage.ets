@@ -9,7 +9,7 @@ struct ImagePage {
   build() {
     Row() {
       Column() {
-        TitleComp('Image').height("56vp").backgroundColor(0xffffff)
+        TitleComp({ titleName: 'Image' })
 
         Image($r("app.media.image_05"))
           .objectFit(this.imageFit)

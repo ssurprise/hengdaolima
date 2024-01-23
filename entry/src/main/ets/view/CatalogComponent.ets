@@ -6,13 +6,15 @@ import { CommonConstants } from '../common/constants/CommonConstants';
 export struct CatalogComponent {
   private mCatalogArray: Array<CatalogItemInfo> = [
     new CatalogItemInfo('文本', CommonConstants.ROUTER_TEXT_PAGE_URL),
+    new CatalogItemInfo('输入框', 'pages/TextInputPage'),
     new CatalogItemInfo('图像', CommonConstants.ROUTER_IMAGE_PAGE_URL),
     new CatalogItemInfo('线性-Row', CommonConstants.ROUTER_ROW_PAGE_URL),
     new CatalogItemInfo('列表-List', 'pages/ListPage'),
     new CatalogItemInfo('网格-Grid', 'pages/GridPage'),
     new CatalogItemInfo('层叠-Stack', 'pages/StackPage'),
     new CatalogItemInfo('单选-Radio', 'pages/RadioPage'),
-    new CatalogItemInfo('轮播-Swiper', 'pages/SwiperPage')
+    new CatalogItemInfo('轮播-Swiper', 'pages/SwiperPage'),
+    new CatalogItemInfo('进度条-Progress', 'pages/ProgressPage'),
   ]
 
   build() {
