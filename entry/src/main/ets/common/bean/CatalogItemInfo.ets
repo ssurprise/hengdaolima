@@ -1,9 +1,9 @@
 export class CatalogItemInfo {
-  constructor(name: String | Resource, path: string) {
+  constructor(name: string | Resource, path: string) {
     this.name = name
     this.path = path
   }
 
-  name: String | Resource;
+  name: string | Resource = '标题';
   path: string;
 }

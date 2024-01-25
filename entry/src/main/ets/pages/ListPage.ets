@@ -4,6 +4,8 @@ import { TitleComp } from '../view/TitleComp'
 @Component
 struct ListsPage {
   private arr: string[] = new Array(20).fill('').map((_, index) => `item ${index}`)
+  @State onScrollIndexStart: number = 0
+  @State onScrollIndexEnd: number = 0
 
   build() {
     Column() {
@@ -29,9 +31,9 @@ struct ListsPage {
       }
       .lanes(2)
       .alignListItem(ListItemAlign.Center)
-      .onScrollIndex((firstIndex: number, lastIndex: number) => {
-        console.log('ListsPage', 'first=' + firstIndex)
-        console.log('ListsPage', 'last=' + lastIndex)
+      .onScrollIndex((start: number, end: number) => {
+        this.onScrollIndexStart = start
+        this.onScrollIndexEnd = end
       })
       // .onScroll((scrollOffset: number, scrollState: ScrollState) => {
       //   console.log('ListsPage', 'scrollOffset' + scrollOffset)
@@ -51,7 +53,14 @@ struct ListsPage {
       .borderWidth(1)
       .borderColor("#212121")
       .width('90%')
+      .margin({ top: 20 })
       .height(360)
+
+      Text(`onScrollIndex 事件监听：start=${this.onScrollIndexStart}, end=${this.onScrollIndexEnd}`)
+        .width('100%')
+        .fontSize(12)
+        .margin({ top: 10 })
+        .padding({ left: 9, right: 9 })
 
       Column() {
         Text('说明：')

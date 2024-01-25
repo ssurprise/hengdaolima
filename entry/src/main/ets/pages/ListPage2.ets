@@ -3,6 +3,8 @@ import { TitleComp } from '../view/TitleComp'
 @Entry
 @Component
 struct ListPage2 {
+  @State onScrollIndexStart: number = 0;
+  @State onScrollIndexEnd: number = 0;
   private numArr: object[] = [
     {
       title: '个位数',
@@ -45,8 +47,10 @@ struct ListPage2 {
         })
       }
       .onScrollIndex((start: number, end: number) => {
-        console.log("ListPage2", "onScrollIndex, start=" + start + " end=" + end)
+        this.onScrollIndexStart = start
+        this.onScrollIndexEnd = end
       })
+      .margin({ top: 20 })
       .sticky(StickyStyle.Header) // 设置吸顶，实现粘性标题效果
       .alignListItem(ListItemAlign.Center)
       .divider({ strokeWidth: 1, color: Color.Green, startMargin: 10, endMargin: 10 })
@@ -55,6 +59,12 @@ struct ListPage2 {
       .borderColor("#212121")
       .width('90%')
       .height(360)
+
+      Text(`onScrollIndex 事件监听：start=${this.onScrollIndexStart}, end=${this.onScrollIndexEnd}`)
+        .width('100%')
+        .fontSize(12)
+        .margin({ top: 10 })
+        .padding({ left: 9, right: 9 })
 
       Column() {
         Text('说明：')
@@ -65,7 +75,7 @@ struct ListPage2 {
         Text('1. 分割线和space间距是针对 ListItemGroup 而不是 ListItem')
           .fontSize(12)
           .fontStyle(FontStyle.Italic)
-        Text('2. onScrollIndex 方法回调中返回的 start和end 也是针对 ListItemGroup的')
+        Text('2. onScrollIndex 方法回调中返回的 start和end 也是针对 ListItemGroup的，也可以印证上面的问题')
           .fontSize(12)
           .fontStyle(FontStyle.Italic)
       }

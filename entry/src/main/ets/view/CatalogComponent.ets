@@ -8,14 +8,16 @@ export struct CatalogComponent {
     new CatalogItemInfo('文本', CommonConstants.ROUTER_TEXT_PAGE_URL),
     new CatalogItemInfo('输入框', 'pages/TextInputPage'),
     new CatalogItemInfo('图像', CommonConstants.ROUTER_IMAGE_PAGE_URL),
+    new CatalogItemInfo('单选-Radio', 'pages/RadioPage'),
     new CatalogItemInfo('线性-Row', CommonConstants.ROUTER_ROW_PAGE_URL),
+    new CatalogItemInfo('层叠-Stack', 'pages/StackPage'),
+    new CatalogItemInfo('轮播-Swiper', 'pages/SwiperPage'),
     new CatalogItemInfo('列表-List-间距/分割线', 'pages/ListPage'),
     new CatalogItemInfo('列表-List-分组', 'pages/ListPage2'),
     new CatalogItemInfo('网格-Grid', 'pages/GridPage'),
-    new CatalogItemInfo('层叠-Stack', 'pages/StackPage'),
-    new CatalogItemInfo('单选-Radio', 'pages/RadioPage'),
-    new CatalogItemInfo('轮播-Swiper', 'pages/SwiperPage'),
     new CatalogItemInfo('进度条-Progress', 'pages/ProgressPage'),
+    new CatalogItemInfo('属性动画', 'pages/AnimationPage'),
+    new CatalogItemInfo('显示动画', 'pages/AnimToPage'),
   ]
 
   build() {
@@ -23,10 +25,11 @@ export struct CatalogComponent {
       Grid() {
         ForEach(this.mCatalogArray, (item: CatalogItemInfo, index: Number) => {
           GridItem() {
-            // @ts-ignore
             Text(item.name)
-              .fontSize(16)
+              .fontSize(14)
               .fontColor(Color.White)
+              .fontWeight(FontWeight.Medium)
+              .fontStyle(FontStyle.Normal)
               .backgroundColor(0x007DFF)
               .width('100%')
               .height('100%')
