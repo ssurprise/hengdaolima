@@ -16,7 +16,7 @@ struct AnimationPage {
         Image($r('app.media.image_05'))
           .width(this.myWidth)
           .height(this.myWidth)
-          //animation只对其上面的type、width、height属性生效，时长为1000ms，曲线为Ease
+            //animation只对其上面的type、width、height属性生效，时长为1000ms，曲线为Ease
           .animation({
             duration: 1000,
             tempo: 1.0,
@@ -55,7 +55,11 @@ struct AnimationPage {
           .fontSize(12)
           .margin({ top: 5, left: 10, right: 10 })
           .fontStyle(FontStyle.Italic)
-        Text('2. 如果一个属性配置了属性动画，且在显式动画闭包中改变该属性值，属性动画优先生效，会使用属性动画的动画参数。')
+        Text('2. 属性动画支持的属性包括width、height、backgroundColor、opacity、scale、rotate、translate等')
+          .fontSize(12)
+          .margin({ top: 5, left: 10, right: 10 })
+          .fontStyle(FontStyle.Italic)
+        Text('3. 如果一个属性配置了属性动画，且在显式动画闭包中改变该属性值，属性动画优先生效，会使用属性动画的动画参数。')
           .fontSize(12)
           .margin({ top: 5, left: 10, right: 10 })
           .fontStyle(FontStyle.Italic)

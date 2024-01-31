@@ -18,6 +18,7 @@ export struct CatalogComponent {
     new CatalogItemInfo('进度条-Progress', 'pages/ProgressPage'),
     new CatalogItemInfo('属性动画', 'pages/AnimationPage'),
     new CatalogItemInfo('显示动画', 'pages/AnimToPage'),
+    new CatalogItemInfo('网络请求', 'pages/HttpRequestPage'),
   ]
 
   build() {

@@ -17,6 +17,8 @@
     "pages/ProgressPage",
     "pages/TextInputPage",
     "pages/AnimationPage",
-    "pages/AnimToPage"
+    "pages/AnimToPage",
+    "pages/HttpRequestPage",
+    "pages/PreferencePage"
   ]
 }
