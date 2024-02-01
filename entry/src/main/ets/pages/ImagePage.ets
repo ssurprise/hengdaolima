@@ -5,6 +5,11 @@ import { TitleComp } from '../view/TitleComp'
 @Component
 struct ImagePage {
   @State imageFit: ImageFit = ImageFit.Cover
+  @State imageRenderMode: ImageRenderMode = ImageRenderMode.Original
+  @State widthValue: number = 0
+  @State heightValue: number = 0
+  @State componentWidth: number = 0
+  @State componentHeight: number = 0
 
   build() {
     Row() {
@@ -13,51 +18,137 @@ struct ImagePage {
 
         Image($r("app.media.image_05"))
           .objectFit(this.imageFit)
+          .renderMode(this.imageRenderMode)
           .margin({ top: "20vp" })
           .width("200vp")
           .height("200vp")
           .borderWidth("1vp")
           .borderStyle(BorderStyle.Dashed)
           .borderColor("#212121")
+          .onComplete(msg => {
+            // 通过在Image组件上绑定onComplete事件，图片加载成功后可以获取图片的必要信息。如果图片加载失败，也可以通过绑定onError回调来获得结果。
+            if (msg) {
+              this.widthValue = msg.width
+              this.heightValue = msg.height
+              this.componentWidth = msg.componentWidth
+              this.componentHeight = msg.componentHeight
+            }
+          })
 
-        Text("适配类型:")
-          .margin({ top: "15vp" })
-          .textAlign(TextAlign.Start)
-          .fontSize("14fp")
-          .fontWeight(FontWeight.Medium)
-          .margin({ left: "20vp", top: "16vp" })
-          .width("100%")
-          .fontColor("#212121")
-
-        Row() {
-          Button("Contain").onClick(() => {
-            this.imageFit = ImageFit.Contain
-          })
-          Button("Cover").onClick(() => {
-            this.imageFit = ImageFit.Cover
-          })
-          Button("Auto").onClick(() => {
-            this.imageFit = ImageFit.Auto
-          })
-        }.margin({ top: "8vp" })
-        .width("100%")
-        .justifyContent(FlexAlign.SpaceEvenly)
-
-        Row() {
-          Button("Fill").onClick(() => {
-            this.imageFit = ImageFit.Fill
-          })
-          Button("ScaleDown").onClick(() => {
-            this.imageFit = ImageFit.ScaleDown
-          })
-          Button("None").onClick(() => {
-            this.imageFit = ImageFit.None
-          })
-        }.margin({ top: "8vp" })
-        .width("100%")
-        .justifyContent(FlexAlign.SpaceEvenly)
+        this.renderImageSize()
+        this.renderImageComponentSize()
+        this.renderObjectFit()
+        this.renderRenderMode()
+        this.renderTips()
       }
       .width('100%')
     }
+  }
+
+  @Builder renderImageSize() {
+    Text(`图片宽高: ${this.widthValue} * ${this.heightValue}`)
+      .margin({ top: "15vp" })
+      .textAlign(TextAlign.Start)
+      .fontSize("12fp")
+      .fontStyle(FontStyle.Italic)
+      .margin({ left: "20vp", top: "16vp" })
+      .width("100%")
+      .fontColor("#212121")
+  }
+
+  @Builder renderImageComponentSize() {
+    Text(`组件宽高: ${this.componentWidth} * ${this.componentHeight}`)
+      .textAlign(TextAlign.Start)
+      .fontSize("12fp")
+      .fontStyle(FontStyle.Italic)
+      .margin({ left: "20vp" })
+      .width("100%")
+      .fontColor("#212121")
+  }
+
+  /**
+   * 设置缩放类型
+   */
+  @Builder renderObjectFit() {
+    Text("缩放类型（objectFit属性）:")
+      .margin({ top: "10vp" })
+      .textAlign(TextAlign.Start)
+      .fontSize("14fp")
+      .fontWeight(FontWeight.Medium)
+      .margin({ left: "20vp", top: "16vp" })
+      .width("100%")
+      .fontColor("#212121")
+
+    Row() {
+      Button("Contain").onClick(() => {
+        this.imageFit = ImageFit.Contain
+      })
+      Button("Cover").onClick(() => {
+        this.imageFit = ImageFit.Cover
+      })
+      Button("Auto").onClick(() => {
+        this.imageFit = ImageFit.Auto
+      })
+    }.margin({ top: "8vp" })
+    .width("100%")
+    .height(30)
+    .justifyContent(FlexAlign.SpaceEvenly)
+
+    Row() {
+      Button("Fill").onClick(() => {
+        this.imageFit = ImageFit.Fill
+      })
+      Button("ScaleDown").onClick(() => {
+        this.imageFit = ImageFit.ScaleDown
+      })
+      Button("None").onClick(() => {
+        this.imageFit = ImageFit.None
+      })
+    }
+    .width("100%")
+    .height(30)
+    .margin({ top: "8vp" })
+    .justifyContent(FlexAlign.SpaceEvenly)
+  }
+
+  /**
+   * 设置渲染模式
+   */
+  @Builder renderRenderMode() {
+    Text("渲染模式（renderMode属性）:")
+      .margin({ top: "15vp" })
+      .textAlign(TextAlign.Start)
+      .fontSize("14fp")
+      .fontWeight(FontWeight.Medium)
+      .margin({ left: "20vp", top: "16vp" })
+      .width("100%")
+      .fontColor("#212121")
+    Row() {
+      Button("Original").onClick(() => {
+        this.imageRenderMode = ImageRenderMode.Original
+      })
+      Button("Template").onClick(() => {
+        this.imageRenderMode = ImageRenderMode.Template
+      })
+    }
+    .width("100%")
+    .height(30)
+    .margin({ top: "8vp" })
+    .justifyContent(FlexAlign.SpaceEvenly)
+  }
+
+  @Builder renderTips() {
+    Text('说明：')
+      .fontSize(14)
+      .margin({ top: 50, left: 10, right: 10 })
+      .fontStyle(FontStyle.Normal)
+      .fontWeight(FontWeight.Bold)
+      .fontColor(Color.Red)
+      .alignSelf(ItemAlign.Start)
+    Text('1. overlay属性配置的内容可显示在组件之外，不受组件的宽高影响')
+      .fontSize(12)
+      .margin({ top: 5, left: 10, right: 10 })
+      .alignSelf(ItemAlign.Start)
+      .fontStyle(FontStyle.Italic)
   }
 }
