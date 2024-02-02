@@ -20,6 +20,7 @@ export struct CatalogComponent {
     new CatalogItemInfo('属性动画', 'pages/AnimationPage'),
     new CatalogItemInfo('显示动画', 'pages/AnimToPage'),
     new CatalogItemInfo('网络请求', 'pages/HttpRequestPage'),
+    new CatalogItemInfo('首选项', 'pages/PreferencePage'),
   ]
 
   build() {

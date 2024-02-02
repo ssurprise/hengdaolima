@@ -18,13 +18,13 @@
     ],
     "abilities": [
       {
-        "name": "EntryAbility",
-        "srcEntry": "./ets/entryability/EntryAbility.ts",
-        "description": "$string:ability_desc",
-        "icon": "$media:ic_launcher",
-        "label": "$string:ability_label",
-        "startWindowIcon": "$media:icon",
-        "startWindowBackground": "$color:start_window_background",
+        "name": "EntryAbility",// UIAbility组件的名称
+        "srcEntry": "./ets/entryability/EntryAbility.ts",// UIAbility组件的代码路径
+        "description": "$string:ability_desc", // UIAbility组件的描述信息
+        "icon": "$media:ic_launcher",// UIAbility组件的图标
+        "label": "$string:ability_label", // UIAbility组件的标签
+        "startWindowIcon": "$media:icon",// UIAbility组件启动页面图标资源文件的索引
+        "startWindowBackground": "$color:start_window_background",// UIAbility组件启动页面背景颜色资源文件的索引
         "exported": true,
         "skills": [
           {
