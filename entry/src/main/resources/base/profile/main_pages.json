@@ -20,6 +20,7 @@
     "pages/AnimationPage",
     "pages/AnimToPage",
     "pages/HttpRequestPage",
-    "pages/PreferencePage"
+    "pages/PreferencePage",
+    "pages/WebPage"
   ]
 }
