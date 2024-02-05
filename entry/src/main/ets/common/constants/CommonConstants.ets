@@ -287,4 +287,8 @@ export class CommonConstants {
    * Percent of the column width in detail page.
    */
   static readonly DETAIL_COLUMN_WIDTH_PERCENT: string = '93%';
+  static readonly DASHBOARD_TYPE_COMPONENT: string = 'component';
+  static readonly DASHBOARD_TYPE_IMAGE_SHAPE: string = 'image_shape';
+  static readonly DASHBOARD_TYPE_DATA_MANAGER: string = 'data_manager';
+  static readonly DASHBOARD_TYPE_PRACTICE: string = 'practice';
 }

@@ -21,6 +21,8 @@
     "pages/AnimToPage",
     "pages/HttpRequestPage",
     "pages/PreferencePage",
-    "pages/WebPage"
+    "pages/WebPage",
+    "pages/MarqueePage",
+    "pages/ShapePage"
   ]
 }

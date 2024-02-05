@@ -1,60 +1,52 @@
-import router from '@ohos.router';
-import { CatalogItemInfo } from '../common/bean/CatalogItemInfo';
-import { CommonConstants } from '../common/constants/CommonConstants';
+import { DashboardComp } from '../view/DashboardComp';
+
 
 @Component
 export struct CatalogComponent {
-  private mCatalogArray: Array<CatalogItemInfo> = [
-    new CatalogItemInfo('文本', CommonConstants.ROUTER_TEXT_PAGE_URL),
-    new CatalogItemInfo('输入框', 'pages/TextInputPage'),
-    new CatalogItemInfo('图像', CommonConstants.ROUTER_IMAGE_PAGE_URL),
-    new CatalogItemInfo('单选-Radio', 'pages/RadioPage'),
-    new CatalogItemInfo('进度条-Progress', 'pages/ProgressPage'),
-    new CatalogItemInfo('线性-Row', CommonConstants.ROUTER_ROW_PAGE_URL),
-    new CatalogItemInfo('层叠-Stack', 'pages/StackPage'),
-    new CatalogItemInfo('轮播-Swiper', 'pages/SwiperPage'),
-    new CatalogItemInfo('列表-List-间距/分割线', 'pages/ListPage'),
-    new CatalogItemInfo('列表-List-分组', 'pages/ListPage2'),
-    new CatalogItemInfo('网格-Grid', 'pages/GridPage'),
-    new CatalogItemInfo('弹性-Flex', 'pages/FlexPage'),
-    new CatalogItemInfo('属性动画', 'pages/AnimationPage'),
-    new CatalogItemInfo('显示动画', 'pages/AnimToPage'),
-    new CatalogItemInfo('网络请求', 'pages/HttpRequestPage'),
-    new CatalogItemInfo('首选项', 'pages/PreferencePage'),
-    new CatalogItemInfo('Web页', 'pages/WebPage'),
-  ]
-
   build() {
     Column() {
-      Grid() {
-        ForEach(this.mCatalogArray, (item: CatalogItemInfo, index: Number) => {
-          GridItem() {
-            Text(item.name)
-              .fontSize(14)
-              .fontColor(Color.White)
-              .fontWeight(FontWeight.Medium)
-              .fontStyle(FontStyle.Normal)
-              .backgroundColor(0x007DFF)
-              .width('100%')
-              .height('100%')
-              .textAlign(TextAlign.Center)
-          }
-          .height('50vp')
-          .onClick(() => {
-            router.pushUrl({ url: item.path });
-          })
-          // @ts-ignore
-        }, (item: CatalogItemInfo) => item.name)
+      Tabs({ barPosition: BarPosition.Start }) {
+        /*
+        TabContent组件不支持设置通用宽度属性，其宽度默认撑满Tabs父组件。
+        TabContent组件不支持设置通用高度属性，其高度由Tabs父组件高度与TabBar组件高度决定。
+        TabContent组件不支持内容过长时页面的滑动，如需页面滑动，可嵌套List使用。
+         */
+        TabContent() {
+          DashboardComp({ mType: 'component' })
+        }
+        .padding({ left: 5, right: 5 })
+        .tabBar("组件")
+
+        TabContent() {
+          DashboardComp({ mType: 'image_shape' })
+        }
+        .padding({ left: 5, right: 5 })
+        .tabBar("图像")
+
+        TabContent() {
+          DashboardComp({ mType: 'animation' })
+        }
+        .padding({ left: 5, right: 5 })
+        .tabBar("动画")
+
+        TabContent() {
+          DashboardComp({ mType: 'data_manager' })
+        }
+        .padding({ left: 5, right: 5 })
+        .tabBar("数据管理")
+
+        TabContent() {
+          DashboardComp({ mType: 'practice' })
+        }
+        .padding({ left: 5, right: 5 })
+        .tabBar("实践")
       }
-      .margin({ top: '20vp' })
-      .columnsTemplate('1fr 1fr 1fr  1fr') //仅设置columnsTemplate时，Grid主轴为垂直方向，交叉轴为水平方向。
-      .columnsGap(10)
-      .rowsGap(10)
-      .padding(10)
+      .barMode(BarMode.Scrollable)
     }
     .width('100%')
     .height('100%')
     .justifyContent(FlexAlign.Start)
-    .alignItems(HorizontalAlign.Center)
+    .alignItems(HorizontalAlign.Start)
+    .backgroundColor($r('app.color.login_page_background'))
   }
 }
