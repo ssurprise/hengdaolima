@@ -23,6 +23,10 @@
     "pages/PreferencePage",
     "pages/WebPage",
     "pages/MarqueePage",
-    "pages/ShapePage"
+    "pages/ShapePage",
+    "pages/CanvasPage",
+    "pages/AlertDialogPage",
+    "pages/RefreshPage",
+    "pages/NotificationPage"
   ]
 }

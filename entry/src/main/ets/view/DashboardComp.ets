@@ -19,10 +19,13 @@ export struct DashboardComp {
       new CatalogItemInfo('列表-List-间距', 'pages/ListPage'),
       new CatalogItemInfo('列表-List-分组', 'pages/ListPage2'),
       new CatalogItemInfo('网格-Grid', 'pages/GridPage'),
-      new CatalogItemInfo('弹性-Flex', 'pages/FlexPage')]
+      new CatalogItemInfo('弹性-Flex', 'pages/FlexPage'),
+      new CatalogItemInfo('刷新-Refresh', 'pages/RefreshPage'),
+      new CatalogItemInfo('弹窗', 'pages/AlertDialogPage')]
     ],
     ['image_shape', [
-      new CatalogItemInfo('图形', 'pages/ShapePage')]
+      new CatalogItemInfo('图形', 'pages/ShapePage'),
+      new CatalogItemInfo('Canvas绘图', 'pages/CanvasPage')]
     ],
     ['animation', [
       new CatalogItemInfo('显示动画', 'pages/AnimToPage'),
@@ -33,7 +36,8 @@ export struct DashboardComp {
     ],
     ['practice', [
       new CatalogItemInfo('网络请求', 'pages/HttpRequestPage'),
-      new CatalogItemInfo('Web页', 'pages/WebPage')]
+      new CatalogItemInfo('Web页', 'pages/WebPage'),
+      new CatalogItemInfo('通知', 'pages/NotificationPage')]
     ]
   ])
 
