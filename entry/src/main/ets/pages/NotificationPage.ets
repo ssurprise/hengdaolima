@@ -1,12 +1,14 @@
 import { TitleComp } from '../view/TitleComp';
 import NotificationManager from '@ohos.notificationManager';
+import image from '@ohos.multimedia.image';
 
 
 @Entry
 @Component
 struct NotificationPage {
-  @State message: string = 'Hello World'
+  readonly TAG: string = 'NotificationPage'
   @State mType: NotificationManager.ContentType = NotificationManager.ContentType.NOTIFICATION_CONTENT_BASIC_TEXT
+  private notificationId: number = 1
   private mTitle: string = ''
   private mText: string = ''
   private mExpandedTitle: string = ''
@@ -23,7 +25,7 @@ struct NotificationPage {
       Button('发送')
         .height(40)
         .width(80)
-        .margin({ right: 15 })
+        .margin({ top: 10, right: 30 })
         .alignSelf(ItemAlign.End)
         .type(ButtonType.Capsule)
         .onClick(() => {
@@ -36,29 +38,56 @@ struct NotificationPage {
     .alignItems(HorizontalAlign.Start)
   }
 
-  private sendNotification() {
+  async sendNotification() {
+
+    // 获取图片信息
+    let pixelMap = null
+    if (NotificationManager.ContentType.NOTIFICATION_CONTENT_PICTURE == this.mType) {
+      let resManager = getContext(this).resourceManager
+      let imageArray = await resManager.getMediaContent($r('app.media.ic_launcher').id)
+      let imageResource = image.createImageSource(imageArray.buffer)
+      pixelMap = await imageResource.createPixelMap();
+    }
+
     let notificationRequest =
       {
-        id: 1,
+        id: this.notificationId++,
         content: {
           slotType: NotificationManager.SlotType.SERVICE_INFORMATION,
           contentType: this.mType,
           normal: {
             title: this.mTitle,
             text: this.mText,
+          },
+          longText: {
+            title: this.mTitle,
+            text: this.mText,
             longText: this.mLongText,
             expandedTitle: this.mExpandedTitle,
+            briefText: "briefText?"
+          },
+          multiLine: {
+            title: this.mTitle,
+            text: this.mText,
             longTitle: this.mExpandedTitle,
-            lines: this.mLines
+            lines: this.mLines,
+            briefText: "briefText?"
+          },
+          picture: {
+            title: this.mTitle,
+            text: this.mText,
+            expandedTitle: this.mExpandedTitle,
+            briefText: "briefText?",
+            picture: pixelMap
           }
         }
       }
     NotificationManager.publish(notificationRequest, (err) => {
       if (err) {
-        console.error(`[ANS] failed to publish, error[${err}]`);
+        console.log(this.TAG, `[ANS] failed to publish, error[${err}]`);
         return;
       }
-      console.info(`[ANS] publish success`);
+      console.error(this.TAG, `[ANS] publish success`);
     });
   }
 
@@ -268,13 +297,37 @@ struct NotificationPage {
   @Builder renderTips() {
     Text('说明：')
       .alignSelf(ItemAlign.Start)
-      .margin({ top: 50, left: 12, right: 10 })
+      .margin({ top: 40, left: 15, right: 15 })
       .fontSize(14)
       .fontWeight(FontWeight.Bold)
       .fontColor(Color.Red)
     Text('1. 考虑到高度问题，上面的配置中省略了附加信息、概要内容的填写。通知内容为多行时，为了简单，只提供了两行配置。')
       .alignSelf(ItemAlign.Start)
-      .margin({ top: 5, left: 10, right: 10 })
+      .margin({ top: 5, left: 15, right: 15 })
+      .fontSize(12)
+      .fontStyle(FontStyle.Italic)
+
+    Text('注意：')
+      .alignSelf(ItemAlign.Start)
+      .margin({ top: 30, left: 15, right: 15 })
+      .fontSize(14)
+      .fontWeight(FontWeight.Bold)
+      .fontColor(Color.Red)
+    Text('1. 图片类型通知图片内容为PixelMap型对象，其大小不能超过2M，这点在API文档里并没有体现，但是在指南中有一句描述。如果超过限制大小会报错无效参数')
+      .alignSelf(ItemAlign.Start)
+      .margin({ top: 5, left: 15, right: 15 })
+      .fontSize(12)
+      .fontStyle(FontStyle.Italic)
+
+    Text('疑问：')
+      .alignSelf(ItemAlign.Start)
+      .margin({ top: 30, left: 15, right: 15 })
+      .fontSize(14)
+      .fontWeight(FontWeight.Bold)
+      .fontColor(Color.Red)
+    Text('1. NotificationPictureContent 展开时的标题属性名称是expandedTitle，而NotificationMultiLineContent 展开时的标题属性名称是longTitle，同一个意思为啥用了俩不一样的名称，我是不理解。')
+      .alignSelf(ItemAlign.Start)
+      .margin({ top: 5, left: 15, right: 15 })
       .fontSize(12)
       .fontStyle(FontStyle.Italic)
   }
