@@ -47,23 +47,20 @@ struct ImagePage {
 
   @Builder renderImageSize() {
     Text(`图片宽高: ${this.widthValue} * ${this.heightValue}`)
-      .margin({ top: "15vp" })
-      .textAlign(TextAlign.Start)
-      .fontSize("12fp")
-      .fontStyle(FontStyle.Italic)
-      .margin({ left: "20vp", top: "16vp" })
-      .width("100%")
+      .margin({ left: 15, top: 10 })
+      .alignSelf(ItemAlign.Start)
+      .fontSize(12)
       .fontColor("#212121")
+      .fontStyle(FontStyle.Italic)
   }
 
   @Builder renderImageComponentSize() {
     Text(`组件宽高: ${this.componentWidth} * ${this.componentHeight}`)
-      .textAlign(TextAlign.Start)
-      .fontSize("12fp")
-      .fontStyle(FontStyle.Italic)
-      .margin({ left: "20vp" })
-      .width("100%")
+      .margin({ left: 15 })
+      .alignSelf(ItemAlign.Start)
+      .fontSize(12)
       .fontColor("#212121")
+      .fontStyle(FontStyle.Italic)
   }
 
   /**
@@ -71,13 +68,11 @@ struct ImagePage {
    */
   @Builder renderObjectFit() {
     Text("缩放类型（objectFit属性）:")
-      .margin({ top: "10vp" })
-      .textAlign(TextAlign.Start)
-      .fontSize("14fp")
-      .fontWeight(FontWeight.Medium)
-      .margin({ left: "20vp", top: "16vp" })
-      .width("100%")
+      .margin({ left: 16, top: 10 })
+      .alignSelf(ItemAlign.Start)
+      .fontSize(14)
       .fontColor("#212121")
+      .fontWeight(FontWeight.Medium)
 
     Row() {
       Button("Contain").onClick(() => {
@@ -116,13 +111,12 @@ struct ImagePage {
    */
   @Builder renderRenderMode() {
     Text("渲染模式（renderMode属性）:")
-      .margin({ top: "15vp" })
-      .textAlign(TextAlign.Start)
-      .fontSize("14fp")
-      .fontWeight(FontWeight.Medium)
-      .margin({ left: "20vp", top: "16vp" })
-      .width("100%")
+      .margin({ left: 16, top: 10 })
+      .alignSelf(ItemAlign.Start)
+      .fontSize(14)
       .fontColor("#212121")
+      .fontWeight(FontWeight.Medium)
+
     Row() {
       Button("Original").onClick(() => {
         this.imageRenderMode = ImageRenderMode.Original
@@ -140,14 +134,13 @@ struct ImagePage {
   @Builder renderTips() {
     Text('说明：')
       .fontSize(14)
-      .margin({ top: 50, left: 10, right: 10 })
-      .fontStyle(FontStyle.Normal)
-      .fontWeight(FontWeight.Bold)
+      .margin({ top: 50, left: 15, right: 15 })
+      .fontWeight(FontWeight.Medium)
       .fontColor(Color.Red)
       .alignSelf(ItemAlign.Start)
     Text('1. overlay属性配置的内容可显示在组件之外，不受组件的宽高影响')
       .fontSize(12)
-      .margin({ top: 5, left: 10, right: 10 })
+      .margin({ left: 15, top: 5, right: 15 })
       .alignSelf(ItemAlign.Start)
       .fontStyle(FontStyle.Italic)
   }

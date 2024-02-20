@@ -15,6 +15,7 @@ export struct DashboardComp {
       new CatalogItemInfo('输入框', 'pages/TextInputPage'),
       new CatalogItemInfo('图像', CommonConstants.ROUTER_IMAGE_PAGE_URL),
       new CatalogItemInfo('单选-Radio', 'pages/RadioPage'),
+      new CatalogItemInfo('跑马灯-Marquee', 'pages/MarqueePage'),
       new CatalogItemInfo('进度条-Progress', 'pages/ProgressPage'),
       new CatalogItemInfo('线性-Row', CommonConstants.ROUTER_ROW_PAGE_URL),
       new CatalogItemInfo('层叠-Stack', 'pages/StackPage'),
@@ -23,8 +24,7 @@ export struct DashboardComp {
       new CatalogItemInfo('列表-List-分组', 'pages/ListPage2'),
       new CatalogItemInfo('网格-Grid', 'pages/GridPage'),
       new CatalogItemInfo('弹性-Flex', 'pages/FlexPage'),
-      new CatalogItemInfo('刷新-Refresh', 'pages/RefreshPage'),
-      new CatalogItemInfo('弹窗', 'pages/AlertDialogPage')]
+      new CatalogItemInfo('刷新-Refresh', 'pages/RefreshPage')]
     ],
     ['image_shape', [
       new CatalogItemInfo('图形', 'pages/ShapePage'),
@@ -42,7 +42,8 @@ export struct DashboardComp {
     ['practice', [
       new CatalogItemInfo('网络请求', 'pages/HttpRequestPage'),
       new CatalogItemInfo('Web页', 'pages/WebPage'),
-      new CatalogItemInfo('通知', 'pages/NotificationPage')]
+      new CatalogItemInfo('通知-基础类型', 'pages/NotificationPage'),
+      new CatalogItemInfo('弹窗', 'pages/AlertDialogPage')]
     ]
   ])
 

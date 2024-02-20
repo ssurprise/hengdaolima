@@ -188,11 +188,6 @@ export class CommonConstants {
   static readonly MINE_PAGE_URL: string = 'pages/MinePage';
 
   /**
-   * Registration success page url.
-   */
-  static readonly REGISTRATION_SUCCESS_PAGE_URL: string = 'pages/RegistrationSuccessPage';
-
-  /**
    * Privacy page url.
    */
   static readonly PRIVACY_PAGE_URL: string = 'pages/PrivacyPage';

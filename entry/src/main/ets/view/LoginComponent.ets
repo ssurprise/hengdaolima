@@ -124,9 +124,9 @@ export struct LoginComponent {
           .fontColor($r('app.color.register_font_clickable'))
           .backgroundColor($r('app.color.register_btn_clickable'))
           .onClick(() => {
-            router.pushUrl({
-              url: CommonConstants.REGISTRATION_SUCCESS_PAGE_URL
-            });
+            // router.pushUrl({
+            //   url: CommonConstants.REGISTRATION_SUCCESS_PAGE_URL
+            // });
           })
       }
     }
