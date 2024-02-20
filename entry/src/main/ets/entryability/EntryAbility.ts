@@ -3,6 +3,8 @@ import hilog from '@ohos.hilog';
 import UIAbility from '@ohos.app.ability.UIAbility';
 import type Want from '@ohos.app.ability.Want';
 import type window from '@ohos.window';
+import rdbManager from '../common/database/RdbManager';
+
 
 /**
  * Lift cycle management of Ability.
@@ -13,6 +15,8 @@ export default class EntryAbility extends UIAbility {
   onCreate(want: Want, launchParam: AbilityConstant.LaunchParam): void {
     // Create状态为在应用加载过程中，UIAbility实例创建完成时触发，系统会调用onCreate()回调。可以在该回调中进行应用初始化操作，例如变量定义资源加载等，用于后续的UI界面展示。
     hilog.info(0x0000, this.TAG, '%{public}s', 'Ability onCreate');
+
+    this.init()
 
     let context = this.context
     /*
@@ -36,6 +40,7 @@ export default class EntryAbility extends UIAbility {
     2.Main window is created, set main page for this ability
      */
     hilog.info(0x0000, this.TAG, '%{public}s', 'Ability onWindowStageCreate');
+
 
     // 需要指定启动页面，否则应用启动后会因为没有默认加载页面而导致白屏
     windowStage.loadContent("pages/MainPage", (err, data) => {
@@ -63,5 +68,9 @@ export default class EntryAbility extends UIAbility {
   onBackground(): void {
     // 在UIAbility的UI界面完全不可见之后，如UIAbility切换至后台时候触发。可以在onBackground()回调中释放UI界面不可见时无用的资源，或者在此回调中执行较为耗时的操作，例如状态保存等。
     hilog.info(0x0000, this.TAG, '%{public}s', 'Ability onBackground');
+  }
+
+  init() {
+    rdbManager.init(this)
   }
 }

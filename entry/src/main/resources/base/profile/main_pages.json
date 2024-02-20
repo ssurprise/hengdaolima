@@ -27,6 +27,8 @@
     "pages/CanvasPage",
     "pages/AlertDialogPage",
     "pages/RefreshPage",
-    "pages/NotificationPage"
+    "pages/NotificationPage",
+    "pages/LottiePage",
+    "pages/RdbPage"
   ]
 }

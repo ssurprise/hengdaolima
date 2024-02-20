@@ -1,6 +1,9 @@
 import router from '@ohos.router';
+import systemDateTime from '@ohos.systemDateTime';
 import { CatalogItemInfo } from '../common/bean/CatalogItemInfo';
 import { CommonConstants } from '../common/constants/CommonConstants';
+import BrowserHistoryViewMode from '../viewmodel/BrowserHistoryViewMode';
+
 
 @Component
 export struct DashboardComp {
@@ -29,10 +32,12 @@ export struct DashboardComp {
     ],
     ['animation', [
       new CatalogItemInfo('显示动画', 'pages/AnimToPage'),
-      new CatalogItemInfo('属性动画', 'pages/AnimationPage')]
+      new CatalogItemInfo('属性动画', 'pages/AnimationPage'),
+      new CatalogItemInfo('json动画', 'pages/LottiePage')]
     ],
     ['data_manager', [
-      new CatalogItemInfo('首选项', 'pages/PreferencePage')]
+      new CatalogItemInfo('首选项', 'pages/PreferencePage'),
+      new CatalogItemInfo('关系型数据库', 'pages/RdbPage')]
     ],
     ['practice', [
       new CatalogItemInfo('网络请求', 'pages/HttpRequestPage'),
@@ -60,6 +65,11 @@ export struct DashboardComp {
           .height('50vp')
           .onClick(() => {
             router.pushUrl({ url: item.path });
+            BrowserHistoryViewMode.addHistoryItem(getContext(), {
+              name: item.name,
+              pagePath: item.path,
+              lastTime: 1
+            })
           })
           // @ts-ignore
         }, (item: CatalogItemInfo) => item.name)
