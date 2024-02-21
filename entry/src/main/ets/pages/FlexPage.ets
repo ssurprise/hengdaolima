@@ -1,6 +1,13 @@
 import { TitleComp } from '../view/TitleComp';
+import { TipsComp } from '../view/TipsComp';
 
 
+/**
+ * @Author： shiguotao
+ * @E-mail: skxdad@163.com
+ * @DATE： 2024/2/1 11:15
+ * @Description： Flex组件示例
+ */
 @Entry
 @Component
 struct FlexPage {
@@ -304,19 +311,9 @@ struct FlexPage {
   }
 
   @Builder renderTips() {
-    Text('注意：')
-      .fontSize(14)
-      .margin({ top: 40, left: 15, right: 15 })
-      .fontStyle(FontStyle.Normal)
-      .fontWeight(FontWeight.Bold)
-      .fontColor(Color.Red)
-    Text('1. wrap属性为 FlexWrap.NoWrap（默认值）时，表示不换行。\n   ·当 duration属性为横向时，如果子组件的宽度总和大于父元素的宽度，则子组件会被压缩宽度；\n   ·当 duration属性为纵向时，如果子组件的高度总和大于父元素的高度，则子组件会被压缩高度。')
-      .fontSize(12)
-      .margin({ top: 5, left: 15, right: 15 })
-      .fontStyle(FontStyle.Italic)
-    Text('2. 容器和子元素都可以设置交叉轴对齐方式，且子元素设置的对齐方式优先级较高。\n   ·Flex组件的alignItems参数设置子组件在交叉轴的对齐方式\n   ·子组件的alignSelf属性也可以设置子组件在父容器交叉轴的对齐格式，且会覆盖Flex布局容器中alignItems配置')
-      .fontSize(12)
-      .margin({ top: 5, left: 15, right: 15 })
-      .fontStyle(FontStyle.Italic)
+    TipsComp({ tipArray: [
+      'wrap属性为 FlexWrap.NoWrap（默认值）时，表示不换行。\n   ·当 duration属性为横向时，如果子组件的宽度总和大于父元素的宽度，则子组件会被压缩宽度；\n   ·当 duration属性为纵向时，如果子组件的高度总和大于父元素的高度，则子组件会被压缩高度。',
+      '容器和子元素都可以设置交叉轴对齐方式，且子元素设置的对齐方式优先级较高。\n   ·Flex组件的alignItems参数设置子组件在交叉轴的对齐方式\n   ·子组件的alignSelf属性也可以设置子组件在父容器交叉轴的对齐格式，且会覆盖Flex布局容器中alignItems配置'
+    ] })
   }
 }

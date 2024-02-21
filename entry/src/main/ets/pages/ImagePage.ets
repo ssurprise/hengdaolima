@@ -1,4 +1,5 @@
 import { TitleComp } from '../view/TitleComp'
+import { TipsComp } from '../view/TipsComp'
 
 
 @Entry
@@ -132,16 +133,8 @@ struct ImagePage {
   }
 
   @Builder renderTips() {
-    Text('说明：')
-      .fontSize(14)
-      .margin({ top: 50, left: 15, right: 15 })
-      .fontWeight(FontWeight.Medium)
-      .fontColor(Color.Red)
-      .alignSelf(ItemAlign.Start)
-    Text('1. overlay属性配置的内容可显示在组件之外，不受组件的宽高影响')
-      .fontSize(12)
-      .margin({ left: 15, top: 5, right: 15 })
-      .alignSelf(ItemAlign.Start)
-      .fontStyle(FontStyle.Italic)
+    TipsComp({ tipArray: [
+      'overlay属性配置的内容可显示在组件之外，不受组件的宽高影响'
+    ] })
   }
 }

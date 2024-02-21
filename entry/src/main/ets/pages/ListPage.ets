@@ -1,3 +1,4 @@
+import { TipsComp } from '../view/TipsComp'
 import { TitleComp } from '../view/TitleComp'
 
 @Entry
@@ -59,26 +60,19 @@ struct ListsPage {
       Text(`onScrollIndex 事件监听：start=${this.onScrollIndexStart}, end=${this.onScrollIndexEnd}`)
         .width('100%')
         .fontSize(12)
-        .margin({ top: 10 })
-        .padding({ left: 9, right: 9 })
+        .alignSelf(ItemAlign.Start)
+        .margin({ left: $r('app.float.page_space_left'), top: 10, right: $r('app.float.page_space_right') })
 
-      Column() {
-        Text('说明：')
-          .fontSize(14)
-          .fontStyle(FontStyle.Normal)
-          .fontWeight(FontWeight.Bold)
-          .fontColor(Color.Red)
-        Text('1. divider 可以和 space 同时设置。当divider的`strokeWidth`小于space时，会现在space的中间位置显示。如果 divider 的`strokeWidth`大于space的宽度，则会使用`strokeWidth`的宽度。')
-          .fontSize(12)
-          .fontStyle(FontStyle.Italic)
-      }
-      .width('100%')
-      .margin({ top: 30 })
-      .padding({ left: 9, right: 9 })
-      .alignItems(HorizontalAlign.Start)
+      this.renderTips()
     }
     .alignItems(HorizontalAlign.Center)
     .height('100%')
     .width('100%')
+  }
+
+  @Builder renderTips() {
+    TipsComp({ tipArray: [
+      'divider 可以和 space 同时设置。当divider的`strokeWidth`小于space时，会现在space的中间位置显示。如果 divider 的`strokeWidth`大于space的宽度，则会使用`strokeWidth`的宽度。'
+    ] })
   }
 }

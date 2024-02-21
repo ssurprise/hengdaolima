@@ -1,4 +1,5 @@
 import { TitleComp } from '../view/TitleComp';
+import { TipsComp } from '../view/TipsComp';
 
 @Entry
 @Component
@@ -161,23 +162,13 @@ struct ProgressPage {
   }
 
   @Builder renderTip() {
-    Text('注意：')
-      .fontSize(14)
-      .margin({ top: 50, left: 9, right: 9 })
-      .fontStyle(FontStyle.Normal)
-      .fontWeight(FontWeight.Bold)
-      .fontColor(Color.Red)
-    Text('1. ProgressType.Type 为 ProgressType.Capsule 时，需要设置不同的宽高，如果宽高一样大，会展现出跟圆一样的样式。另外，当高度大于宽度的时候会自适应垂直显示')
-      .fontSize(12)
-      .margin({ top: 5, left: 10, right: 10 })
-      .fontStyle(FontStyle.Italic)
-    Text('2. ProgressType.Type 为 ProgressType.ScaleRing 时，需要设置 style，包括strokeWidth、scaleCount 和scaleWidth 属性')
-      .fontSize(12)
-      .margin({ top: 5, left: 10, right: 10 })
-      .fontStyle(FontStyle.Italic)
-    Text('3. ProgressType.Type 为 ProgressType.Ring  时，可以设置 style 的 strokeWidth 属性来修改圆环宽度')
-      .fontSize(12)
-      .margin({ top: 5, left: 10, right: 10 })
-      .fontStyle(FontStyle.Italic)
+    TipsComp({
+      label: '注意：',
+      tipArray: [
+        'ProgressType.Type 为 ProgressType.Capsule 时，需要设置不同的宽高，如果宽高一样大，会展现出跟圆一样的样式。另外，当高度大于宽度的时候会自适应垂直显示',
+        'ProgressType.Type 为 ProgressType.ScaleRing 时，需要设置 style，包括strokeWidth、scaleCount 和scaleWidth 属性',
+        'ProgressType.Type 为 ProgressType.Ring  时，可以设置 style 的 strokeWidth 属性来修改圆环宽度'
+      ]
+    })
   }
 }

@@ -1,5 +1,5 @@
 import { TitleComp } from '../view/TitleComp';
-
+import { TipsComp } from '../view/TipsComp';
 
 @Entry
 @Component
@@ -44,28 +44,18 @@ struct AnimationPage {
           }
           this.flag = !this.flag
         })
-      Column() {
-        Text('说明：')
-          .fontSize(14)
-          .margin({ top: 50, left: 10, right: 10 })
-          .fontStyle(FontStyle.Normal)
-          .fontWeight(FontWeight.Bold)
-          .fontColor(Color.Red)
-        Text('1. 想要组件随某个属性值的变化而产生动画，此属性需要加在animation属性之前。有的属性变化不希望通过animation产生属性动画，可以放在animation之后')
-          .fontSize(12)
-          .margin({ top: 5, left: 10, right: 10 })
-          .fontStyle(FontStyle.Italic)
-        Text('2. 属性动画支持的属性包括width、height、backgroundColor、opacity、scale、rotate、translate等')
-          .fontSize(12)
-          .margin({ top: 5, left: 10, right: 10 })
-          .fontStyle(FontStyle.Italic)
-        Text('3. 如果一个属性配置了属性动画，且在显式动画闭包中改变该属性值，属性动画优先生效，会使用属性动画的动画参数。')
-          .fontSize(12)
-          .margin({ top: 5, left: 10, right: 10 })
-          .fontStyle(FontStyle.Italic)
-      }
+
+      this.renderTips()
     }
     .alignItems(HorizontalAlign.Center)
     .width('100%')
+  }
+
+  @Builder renderTips() {
+    TipsComp({ tipArray: [
+      '想要组件随某个属性值的变化而产生动画，此属性需要加在animation属性之前。有的属性变化不希望通过animation产生属性动画，可以放在animation之后',
+      '属性动画支持的属性包括width、height、backgroundColor、opacity、scale、rotate、translate等',
+      '如果一个属性配置了属性动画，且在显式动画闭包中改变该属性值，属性动画优先生效，会使用属性动画的动画参数。'
+    ] })
   }
 }

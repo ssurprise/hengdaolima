@@ -1,4 +1,5 @@
 import { TitleComp } from '../view/TitleComp';
+import { TipsComp } from '../view/TipsComp';
 import promptAction from '@ohos.promptAction';
 import dataPreferences from '@ohos.data.preferences';
 
@@ -86,29 +87,19 @@ struct PreferencePage {
   @Builder renderPreferencePath() {
     Text(`首选项存储路径：${getContext(this).preferencesDir}`)
       .fontSize(12)
-      .margin({ top: 50, left: 10, right: 10 })
+      .margin({ left: $r('app.float.page_space_left'), top: 50, right: $r('app.float.page_space_right') })
       .fontStyle(FontStyle.Italic)
       .fontColor('#212121')
   }
 
   @Builder renderTips() {
-    Text('首选项约束限制：')
-      .fontSize(14)
-      .margin({ top: 50, left: 10, right: 10 })
-      .fontStyle(FontStyle.Normal)
-      .fontWeight(FontWeight.Bold)
-      .fontColor(Color.Red)
-    Text('1. Key键为string类型，要求非空且长度不超过80个字节。')
-      .fontSize(12)
-      .margin({ top: 5, left: 10, right: 10 })
-      .fontStyle(FontStyle.Italic)
-    Text('2. 如果Value值为string类型，可以为空，不为空时长度不超过8192个字节')
-      .fontSize(12)
-      .margin({ top: 5, left: 10, right: 10 })
-      .fontStyle(FontStyle.Italic)
-    Text('3. 内存会随着存储数据量的增大而增大，所以存储的数据量应该是轻量级的，建议存储的数据不超过一万条，否则会在内存方面产生较大的开销。')
-      .fontSize(12)
-      .margin({ top: 5, left: 10, right: 10 })
-      .fontStyle(FontStyle.Italic)
+    TipsComp({
+      label: '首选项约束限制',
+      tipArray: [
+        'Key键为string类型，要求非空且长度不超过80个字节。',
+        '如果Value值为string类型，可以为空，不为空时长度不超过8192个字节',
+        '内存会随着存储数据量的增大而增大，所以存储的数据量应该是轻量级的，建议存储的数据不超过一万条，否则会在内存方面产生较大的开销。'
+      ]
+    })
   }
 }

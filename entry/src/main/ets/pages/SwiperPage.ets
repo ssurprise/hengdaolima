@@ -1,4 +1,5 @@
 import { TitleComp } from '../view/TitleComp'
+import { TipsComp } from '../view/TipsComp'
 
 
 @Entry
@@ -114,25 +115,18 @@ struct SwiperPage {
           .margin({ left: 3 })
       }
       .margin({ left: "9vp" })
-
-      Text('说明：')
-        .fontSize(14)
-        .margin({ top: 50, left: 10, right: 10 })
-        .fontStyle(FontStyle.Normal)
-        .fontWeight(FontWeight.Bold)
-        .fontColor(Color.Red)
-      Text('1. autoPlay完全生效需要loop为true，否则在滑到到最后一个时，不会再切换到第一个')
-        .fontSize(12)
-        .margin({ top: 5, left: 10, right: 10 })
-        .fontStyle(FontStyle.Italic)
-      Text('2. 官方：如果开发者对Swiper组件设置了固定的尺寸，则在轮播显示过程中均以该尺寸生效；否则，在轮播过程中，会根据子组件的大小自动调整自身的尺寸。 ' +
-      '疑问：上面的示例中Swiper并没有设置高度，但是对每个子view设置了不同高度，但是通过观察，发现Swiper的高度并没有随着子view的变化而改变自己的高度，可以通过背景颜色和边框对比。' +
-      '边框是设置给Swiper的，颜色是设置给子View的。')
-        .fontSize(12)
-        .margin({ top: 5, left: 10, right: 10 })
-        .fontStyle(FontStyle.Italic)
+      this.renderTips()
     }
     .alignItems(HorizontalAlign.Start)
     .width('100%')
+  }
+
+  @Builder renderTips() {
+    TipsComp({ tipArray: [
+      'autoPlay属性完全生效需要loop属性为true，否则在滑到到最后一个时，不会再切换到第一个',
+      '官方：如果开发者对Swiper组件设置了固定的尺寸，则在轮播显示过程中均以该尺寸生效；否则，在轮播过程中，会根据子组件的大小自动调整自身的尺寸。 ' +
+      '疑问：上面的示例中Swiper并没有设置高度，但是对每个子view设置了不同高度，但是通过观察，发现Swiper的高度并没有随着子view的变化而改变自己的高度，可以通过背景颜色和边框对比。' +
+      '边框是设置给Swiper的，颜色是设置给子View的。'
+    ] })
   }
 }

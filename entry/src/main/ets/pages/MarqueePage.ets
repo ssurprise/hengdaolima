@@ -1,4 +1,5 @@
 import { TitleComp } from '../view/TitleComp';
+import { TipsComp } from '../view/TipsComp';
 
 @Entry
 @Component
@@ -153,19 +154,9 @@ struct MarqueePage {
   }
 
   @Builder renderTips() {
-    Text('说明：')
-      .fontSize(14)
-      .margin({ top: 50, left: 12, right: 10 })
-      .fontStyle(FontStyle.Normal)
-      .fontWeight(FontWeight.Bold)
-      .fontColor(Color.Red)
-    Text('1. start属性提示：有限的滚动次数播放完毕后，不可以通过改变start重置滚动次数重新开始播放。')
-      .fontSize(12)
-      .margin({ top: 5, left: 10, right: 10 })
-      .fontStyle(FontStyle.Italic)
-    Text('2. lop属性提示：ArkTS卡片上该参数设置任意值都仅在可见时滚动一次')
-      .fontSize(12)
-      .margin({ top: 5, left: 10, right: 10 })
-      .fontStyle(FontStyle.Italic)
+    TipsComp({ tipArray: [
+      'start属性提示：有限的滚动次数播放完毕后，不可以通过改变start重置滚动次数重新开始播放。',
+      'lop属性提示：ArkTS卡片上该参数设置任意值都仅在可见时滚动一次'
+    ] })
   }
 }

@@ -1,4 +1,5 @@
 import { TitleComp } from '../view/TitleComp'
+import { TipsComp } from '../view/TipsComp';
 
 
 @Entry
@@ -83,23 +84,9 @@ struct CanvasPage {
   }
 
   @Builder renderTips() {
-    Text('说明：')
-      .fontSize(14)
-      .margin({ top: 40, left: 9, right: 9 })
-      .fontStyle(FontStyle.Normal)
-      .fontWeight(FontWeight.Bold)
-      .fontColor(Color.Red)
-      .alignSelf(ItemAlign.Start)
-
-    Text('1. Canvas组件初始化完成时的事件回调onReady，该事件之后Canvas组件宽高确定且可获取，可使用Canvas相关API进行绘制')
-      .fontSize(12)
-      .margin({ top: 5, left: 10, right: 10 })
-      .fontStyle(FontStyle.Italic)
-      .alignSelf(ItemAlign.Start)
-    Text('2. drawImage 方法中的参数单位都是vp，不论是宽高还是锚点的单位都是vp。即使图片源获取到的图片宽高单位为px，在 drawImage 方法中也需要切换成对应的vp。')
-      .fontSize(12)
-      .margin({ top: 5, left: 10, right: 10 })
-      .fontStyle(FontStyle.Italic)
-      .alignSelf(ItemAlign.Start)
+    TipsComp({ tipArray: [
+      'Canvas组件初始化完成时的事件回调onReady，该事件之后Canvas组件宽高确定且可获取，可使用Canvas相关API进行绘制',
+      'drawImage 方法中的参数单位都是vp，不论是宽高还是锚点的单位都是vp。即使图片源获取到的图片宽高单位为px，在 drawImage 方法中也需要切换成对应的vp。'
+    ] })
   }
 }

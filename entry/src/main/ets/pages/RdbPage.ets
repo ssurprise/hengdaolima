@@ -1,4 +1,5 @@
 import { TitleComp } from '../view/TitleComp'
+import { TipsComp } from '../view/TipsComp'
 import BrowserHistoryViewMode from '../viewmodel/BrowserHistoryViewMode'
 import { BrowserHistoryItem } from '../model/BrowserHistoryItem';
 
@@ -75,17 +76,10 @@ struct RdbPage {
   }
 
   @Builder renderTips() {
-    Text('说明：')
-      .alignSelf(ItemAlign.Start)
-      .margin({ top: 20, left: 15, right: 15 })
-      .fontSize(14)
-      .fontWeight(FontWeight.Bold)
-      .fontColor(Color.Red)
-    Text('1. 数据存储使用的关系型数据库')
-      .alignSelf(ItemAlign.Start)
-      .margin({ top: 5, left: 15, right: 15 })
-      .fontSize(12)
-      .fontStyle(FontStyle.Italic)
+    TipsComp({ tipArray: [
+      '数据存储使用的关系型数据库，不需要申请读写权限',
+      '一定要注意数据库操作时使用的上下文，否则虽然在回调中没有返回错误，但是数据操作是错误的！！！确保数据的创建和操作是在同一个上下文中，不同的上下文对应着不同的存储路径'
+    ] })
   }
 
   private getItemMarginTop(index: number): number {

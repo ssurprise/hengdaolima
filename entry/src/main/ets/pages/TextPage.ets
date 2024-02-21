@@ -1,4 +1,5 @@
 import { TitleComp } from '../view/TitleComp';
+import { TipsComp } from '../view/TipsComp';
 
 @Entry
 @Component
@@ -86,37 +87,11 @@ struct TextPage {
   }
 
   @Builder renderTips() {
-    Text('注意：')
-      .fontSize(14)
-      .margin({ top: 40, left: 15, right: 15 })
-      .fontStyle(FontStyle.Normal)
-      .fontWeight(FontWeight.Bold)
-      .fontColor(Color.Red)
-      .alignSelf(ItemAlign.Start)
-
-    Text('1. 可是使用Text组件 + Span组件实现 Android 中 SpannableString 的效果')
-      .fontSize(12)
-      .margin({ top: 5, left: 15, right: 15 })
-      .fontStyle(FontStyle.Italic)
-      .alignSelf(ItemAlign.Start)
-
-    Text('2. 在有Span设置的情况下，Text的初始内容无效。如： Text("蓝天"){ Span("白云") } 此时蓝天的本文内容显示不出来。')
-      .fontSize(12)
-      .margin({ top: 5, left: 15, right: 15 })
-      .fontStyle(FontStyle.Italic)
-      .alignSelf(ItemAlign.Start)
-
-    Text('3. 行高设置值不大于0时，不限制文本行高，自适应字体大小')
-      .fontSize(12)
-      .margin({ top: 5, left: 15, right: 15 })
-      .fontStyle(FontStyle.Italic)
-      .alignSelf(ItemAlign.Start)
-
-    Text('4. 行高属性和 Span组件不兼容。也就是说如果Text组件中使用了子组件Span，那么行高的设置属性不会生效。')
-      .fontSize(12)
-      .margin({ top: 5, left: 15, right: 15 })
-      .fontStyle(FontStyle.Italic)
-      .alignSelf(ItemAlign.Start)
-
+    TipsComp({ tipArray: [
+      '可是使用Text组件 + Span组件实现 Android 中 SpannableString 的效果',
+      '在有Span设置的情况下，Text的初始内容无效。如： Text("蓝天"){ Span("白云") } 此时蓝天的本文内容显示不出来。',
+      '行高设置值不大于0时，不限制文本行高，自适应字体大小',
+      '行高属性和 Span组件不兼容。也就是说如果Text组件中使用了子组件Span，那么行高的设置属性不会生效。'
+    ] })
   }
 }

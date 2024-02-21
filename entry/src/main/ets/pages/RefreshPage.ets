@@ -1,4 +1,5 @@
 import { TitleComp } from '../view/TitleComp';
+import { TipsComp } from '../view/TipsComp';
 
 
 @Entry
@@ -42,37 +43,11 @@ struct RefreshPage {
   }
 
   @Builder renderTips() {
-    Text('说明：')
-      .alignSelf(ItemAlign.Start)
-      .margin({ top: 50, left: 12, right: 10 })
-      .fontSize(14)
-      .fontWeight(FontWeight.Bold)
-      .fontColor(Color.Red)
-    Text('1. offset属性：下拉起点距离组件顶部的距离。默认值：16单位：vp. 取值范围：[0vp,64vp]，大于64vp按照64vp处理。')
-      .alignSelf(ItemAlign.Start)
-      .margin({ top: 5, left: 10, right: 10 })
-      .fontSize(12)
-      .fontStyle(FontStyle.Italic)
-    Text('2. friction属性：下拉摩擦系数，取值范围为0到100。默认值：62。0表示下拉刷新容器不跟随手势下拉而下拉。数值越大，下拉刷新容器跟随手势下拉的反应越灵敏。')
-      .alignSelf(ItemAlign.Start)
-      .margin({ top: 5, left: 10, right: 10 })
-      .fontSize(12)
-      .fontStyle(FontStyle.Italic)
-    Text('3. 样式暂不支持自定义！')
-      .alignSelf(ItemAlign.Start)
-      .margin({ top: 5, left: 10, right: 10 })
-      .fontSize(12)
-      .fontColor("#ff4081")
-      .fontStyle(FontStyle.Italic)
-    Text('4. 如果内有子组件Scroll，那么会和Scroll的回弹效果有冲突。')
-      .alignSelf(ItemAlign.Start)
-      .margin({ top: 5, left: 10, right: 10 })
-      .fontSize(12)
-      .fontColor("#ff4081")
-      .fontStyle(FontStyle.Italic)
-  }
-
-  pageTransition(){
-
+    TipsComp({ tipArray: [
+      'offset属性：下拉起点距离组件顶部的距离。默认值：16单位：vp. 取值范围：[0vp,64vp]，大于64vp按照64vp处理。',
+      'friction属性：下拉摩擦系数，取值范围为0到100。默认值：62。0表示下拉刷新容器不跟随手势下拉而下拉。数值越大，下拉刷新容器跟随手势下拉的反应越灵敏。',
+      '样式暂不支持自定义！！！',
+      '如果内有子组件Scroll，那么会和Scroll的回弹效果有冲突！！！',
+    ] })
   }
 }

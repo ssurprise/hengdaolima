@@ -2,7 +2,7 @@ import router from '@ohos.router';
 
 @Component
 export struct TitleComp {
-  @Prop titleName: string
+  titleName: string
 
   /**
    * In low-code mode, do not add anything to the build function, as it will be

@@ -1,4 +1,5 @@
 import { TitleComp } from '../view/TitleComp';
+import { TipsComp } from '../view/TipsComp';
 import promptAction from '@ohos.promptAction';
 
 
@@ -64,22 +65,13 @@ struct RadioPage {
   }
 
   @Builder renderTips() {
-    Text('注意：')
-      .margin({ left: 15, top: 50, right: 15 })
-      .fontSize(14)
-      .fontWeight(FontWeight.Medium)
-      .fontColor(Color.Red)
-    Text('1. Radio 仅支持选中和未选中两种样式，不支持自定义颜色和形状')
-      .margin({ left: 15, top: 5, right: 15 })
-      .fontSize(12)
-      .fontStyle(FontStyle.Italic)
-    Text('2. Radio 没有固定的父控件，允许在不同的父组件中进行关联，只要关联的group是同一个即可。如上图，三个Radio 分属三个不同的Row布局，但是group 配置的是同一个。')
-      .margin({ left: 15, top: 5, right: 15 })
-      .fontSize(12)
-      .fontStyle(FontStyle.Italic)
-    Text('3. Radio 是不带文本提示的，Radio控件中的value 并不是文本的显示内容，上面的文本是我自己添加的Text控件。Radio的实际大小即为虚线边框所表示的范围')
-      .margin({ left: 15, top: 5, right: 15 })
-      .fontSize(12)
-      .fontStyle(FontStyle.Italic)
+    TipsComp({
+      label: '注意：',
+      tipArray: [
+        'Radio 仅支持选中和未选中两种样式，不支持自定义颜色和形状',
+        'Radio 没有固定的父控件，允许在不同的父组件中进行关联，只要关联的group是同一个即可。如上图，三个Radio 分属三个不同的Row布局，但是group 配置的是同一个。',
+        'Radio 是不带文本提示的，Radio控件中的value 并不是文本的显示内容，上面的文本是我自己添加的Text控件。Radio的实际大小即为虚线边框所表示的范围'
+      ]
+    })
   }
 }

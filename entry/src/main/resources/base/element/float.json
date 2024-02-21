@@ -86,7 +86,7 @@
     },
     {
       "name": "scroll_min_height",
-      "value":"304vp"
+      "value": "304vp"
     },
     {
       "name": "login_btn_margin_top",
@@ -247,6 +247,22 @@
     {
       "name": "user_grid_row_margin",
       "value": "12vp"
+    },
+    {
+      "name": "page_space_left",
+      "value": "15vp"
+    },
+    {
+      "name": "page_space_right",
+      "value": "15vp"
+    },
+    {
+      "name": "tip_comp_margin_left",
+      "value": "15vp"
+    },
+    {
+      "name": "tip_comp_margin_right",
+      "value": "15vp"
     }
   ]
 }

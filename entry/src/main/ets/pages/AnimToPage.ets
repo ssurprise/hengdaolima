@@ -1,3 +1,4 @@
+import { TipsComp } from '../view/TipsComp';
 import { TitleComp } from '../view/TitleComp';
 
 
@@ -34,25 +35,15 @@ struct AnimToPage {
         });
       })
 
-
-      Column() {
-        Text('说明：')
-          .fontSize(14)
-          .margin({ top: 50, left: 10, right: 10 })
-          .fontStyle(FontStyle.Normal)
-          .fontWeight(FontWeight.Bold)
-          .fontColor(Color.Red)
-        Text('1. 显式动画把要执行动画的属性的修改放在闭包函数中触发动画，而属性动画则无需使用闭包')
-          .fontSize(12)
-          .margin({ top: 5, left: 10, right: 10 })
-          .fontStyle(FontStyle.Italic)
-        Text('2. 怎么感觉本质上还是属性动画呢？在 animateTo 闭包中修改的也是组件的属性，像宽高这些，只是和 animation(value: AnimateParam) 的实现方式不同。')
-          .fontSize(12)
-          .margin({ top: 5, left: 10, right: 10 })
-          .fontStyle(FontStyle.Italic)
-      }
-      .justifyContent(FlexAlign.Start)
+      this.renderTips()
     }
     .width('100%')
+  }
+
+  @Builder renderTips() {
+    TipsComp({ tipArray: [
+      '显式动画把要执行动画的属性的修改放在闭包函数中触发动画，而属性动画则无需使用闭包',
+      '怎么感觉本质上还是属性动画呢？在 animateTo 闭包中修改的也是组件的属性，像宽高这些，只是和 animation(value: AnimateParam) 的实现方式不同。'
+    ] })
   }
 }

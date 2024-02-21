@@ -1,4 +1,5 @@
 import { TitleComp } from '../view/TitleComp';
+import { TipsComp } from '../view/TipsComp';
 import NotificationManager from '@ohos.notificationManager';
 import image from '@ohos.multimedia.image';
 
@@ -295,40 +296,25 @@ struct NotificationPage {
   }
 
   @Builder renderTips() {
-    Text('说明：')
-      .alignSelf(ItemAlign.Start)
-      .margin({ top: 40, left: 15, right: 15 })
-      .fontSize(14)
-      .fontWeight(FontWeight.Bold)
-      .fontColor(Color.Red)
-    Text('1. 考虑到高度问题，上面的配置中省略了附加信息、概要内容的填写。通知内容为多行时，为了简单，只提供了两行配置。')
-      .alignSelf(ItemAlign.Start)
-      .margin({ top: 5, left: 15, right: 15 })
-      .fontSize(12)
-      .fontStyle(FontStyle.Italic)
+    TipsComp({
+      label: '说明：',
+      tipArray: [
+        '考虑到高度问题，上面的配置中省略了附加信息、概要内容的填写。通知内容为多行时，为了简单，只提供了两行配置。'
+      ]
+    })
 
-    Text('注意：')
-      .alignSelf(ItemAlign.Start)
-      .margin({ top: 30, left: 15, right: 15 })
-      .fontSize(14)
-      .fontWeight(FontWeight.Bold)
-      .fontColor(Color.Red)
-    Text('1. 图片类型通知图片内容为PixelMap型对象，其大小不能超过2M，这点在API文档里并没有体现，但是在指南中有一句描述。如果超过限制大小会报错无效参数')
-      .alignSelf(ItemAlign.Start)
-      .margin({ top: 5, left: 15, right: 15 })
-      .fontSize(12)
-      .fontStyle(FontStyle.Italic)
+    TipsComp({
+      label: '注意：',
+      tipArray: [
+        '图片类型通知图片内容为PixelMap型对象，其大小不能超过2M，这点在API文档里并没有体现，但是在指南中有一句描述。如果超过限制大小会报错无效参数。'
+      ]
+    })
 
-    Text('疑问：')
-      .alignSelf(ItemAlign.Start)
-      .margin({ top: 30, left: 15, right: 15 })
-      .fontSize(14)
-      .fontWeight(FontWeight.Bold)
-      .fontColor(Color.Red)
-    Text('1. NotificationPictureContent 展开时的标题属性名称是expandedTitle，而NotificationMultiLineContent 展开时的标题属性名称是longTitle，同一个意思为啥用了俩不一样的名称，我是不理解。')
-      .alignSelf(ItemAlign.Start)
-      .margin({ top: 5, left: 15, right: 15 })
-      .fontSize(12)
-      .fontStyle(FontStyle.Italic)
+    TipsComp({
+      label: '疑问：',
+      tipArray: [
+        'NotificationPictureContent 展开时的标题属性名称是expandedTitle，而NotificationMultiLineContent 展开时的标题属性名称是longTitle，同一个意思为啥用了俩不一样的名称，我是不理解。'
+      ]
+    })
   }
 }

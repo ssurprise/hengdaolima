@@ -1,4 +1,5 @@
 import { TitleComp } from '../view/TitleComp'
+import { TipsComp } from '../view/TipsComp'
 
 @Entry
 @Component
@@ -62,27 +63,11 @@ struct ListPage2 {
 
       Text(`onScrollIndex 事件监听：start=${this.onScrollIndexStart}, end=${this.onScrollIndexEnd}`)
         .width('100%')
+        .alignSelf(ItemAlign.Start)
+        .margin({ left: $r('app.float.page_space_left'), top: 10, right: $r('app.float.page_space_right') })
         .fontSize(12)
-        .margin({ top: 10 })
-        .padding({ left: 9, right: 9 })
 
-      Column() {
-        Text('说明：')
-          .fontSize(14)
-          .fontStyle(FontStyle.Normal)
-          .fontWeight(FontWeight.Bold)
-          .fontColor(Color.Red)
-        Text('1. 分割线和space间距是针对 ListItemGroup 而不是 ListItem')
-          .fontSize(12)
-          .fontStyle(FontStyle.Italic)
-        Text('2. onScrollIndex 方法回调中返回的 start和end 也是针对 ListItemGroup的，也可以印证上面的问题')
-          .fontSize(12)
-          .fontStyle(FontStyle.Italic)
-      }
-      .width('100%')
-      .margin({ top: 30 })
-      .padding({ left: 9, right: 9 })
-      .alignItems(HorizontalAlign.Start)
+      this.renderTips()
     }
     .alignItems(HorizontalAlign.Center)
     .height('100%')
@@ -96,5 +81,12 @@ struct ListPage2 {
       .backgroundColor('#f5f5f5')
       .width('100%')
       .padding(5)
+  }
+
+  @Builder renderTips() {
+    TipsComp({ tipArray: [
+      '分割线和space间距是针对 ListItemGroup 而不是 ListItem',
+      'onScrollIndex 方法回调中返回的 start和end 也是针对 ListItemGroup的，也可以印证上面的问题'
+    ] })
   }
 }
