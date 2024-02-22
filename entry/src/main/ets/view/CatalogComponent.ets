@@ -30,6 +30,12 @@ export struct CatalogComponent {
         .tabBar("动画")
 
         TabContent() {
+          DashboardComp({ mType: 'arkts_base' })
+        }
+        .padding({ left: 5, right: 5 })
+        .tabBar("ArkTs基础")
+
+        TabContent() {
           DashboardComp({ mType: 'data_manager' })
         }
         .padding({ left: 5, right: 5 })

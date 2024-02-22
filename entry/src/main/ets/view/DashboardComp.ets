@@ -35,6 +35,9 @@ export struct DashboardComp {
       new CatalogItemInfo('属性动画', 'pages/AnimationPage'),
       new CatalogItemInfo('json动画', 'pages/LottiePage')]
     ],
+    ['arkts_base', [
+      new CatalogItemInfo('异步并发', 'pages/PromisePage')]
+    ],
     ['data_manager', [
       new CatalogItemInfo('首选项', 'pages/PreferencePage'),
       new CatalogItemInfo('关系型数据库', 'pages/RdbPage')]
@@ -43,7 +46,8 @@ export struct DashboardComp {
       new CatalogItemInfo('网络请求', 'pages/HttpRequestPage'),
       new CatalogItemInfo('Web页', 'pages/WebPage'),
       new CatalogItemInfo('通知-基础类型', 'pages/NotificationPage'),
-      new CatalogItemInfo('弹窗', 'pages/AlertDialogPage')]
+      new CatalogItemInfo('弹窗', 'pages/AlertDialogPage'),
+      new CatalogItemInfo('拨打电话', 'pages/CallPage')]
     ]
   ])
 

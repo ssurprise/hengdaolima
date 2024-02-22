@@ -28,6 +28,8 @@
     "pages/RefreshPage",
     "pages/NotificationPage",
     "pages/LottiePage",
-    "pages/RdbPage"
+    "pages/RdbPage",
+    "pages/PromisePage",
+    "pages/CallPage"
   ]
 }
