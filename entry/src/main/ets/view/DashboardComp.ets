@@ -24,7 +24,8 @@ export struct DashboardComp {
       new CatalogItemInfo('列表-List-分组', 'pages/ListPage2'),
       new CatalogItemInfo('网格-Grid', 'pages/GridPage'),
       new CatalogItemInfo('弹性-Flex', 'pages/FlexPage'),
-      new CatalogItemInfo('刷新-Refresh', 'pages/RefreshPage')]
+      new CatalogItemInfo('刷新-Refresh', 'pages/RefreshPage'),
+      new CatalogItemInfo('选择器-Picker', 'pages/PickerPage')]
     ],
     ['image_animation', [
       new CatalogItemInfo('图形', 'pages/ShapePage'),

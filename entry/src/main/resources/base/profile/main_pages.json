@@ -33,6 +33,7 @@
     "pages/CallPage",
     "pages/DeviceInfoPage",
     "pages/DataUriUtilsPage",
-    "pages/AppManagerPage"
+    "pages/AppManagerPage",
+    "pages/PickerPage"
   ]
 }
