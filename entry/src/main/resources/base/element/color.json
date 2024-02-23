@@ -79,6 +79,18 @@
     {
       "name": "input_border_color",
       "value": "#33000000"
+    },
+    {
+      "name": "main_txt_color",
+      "value": "#212121"
+    },
+    {
+      "name": "primary_color",
+      "value": "#ff4081"
+    },
+    {
+      "name": "bg_color",
+      "value": "#f5f5f5"
     }
   ]
 }

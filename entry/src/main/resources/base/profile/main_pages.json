@@ -30,6 +30,9 @@
     "pages/LottiePage",
     "pages/RdbPage",
     "pages/PromisePage",
-    "pages/CallPage"
+    "pages/CallPage",
+    "pages/DeviceInfoPage",
+    "pages/DataUriUtilsPage",
+    "pages/AppManagerPage"
   ]
 }

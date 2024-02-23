@@ -18,16 +18,10 @@ export struct CatalogComponent {
         .tabBar("组件")
 
         TabContent() {
-          DashboardComp({ mType: 'image_shape' })
+          DashboardComp({ mType: 'image_animation' })
         }
         .padding({ left: 5, right: 5 })
-        .tabBar("图像")
-
-        TabContent() {
-          DashboardComp({ mType: 'animation' })
-        }
-        .padding({ left: 5, right: 5 })
-        .tabBar("动画")
+        .tabBar("图像/动画")
 
         TabContent() {
           DashboardComp({ mType: 'arkts_base' })

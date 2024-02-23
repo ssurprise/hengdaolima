@@ -7,6 +7,7 @@
 @Component
 export struct TipsComp {
   private label: string = '说明：'
+  private marginSpace: Length = $r('app.float.tip_comp_margin_left')
   private tipArray: Array<String>
 
   build() {
@@ -25,6 +26,6 @@ export struct TipsComp {
     }
     .alignItems(HorizontalAlign.Start)
     .alignSelf(ItemAlign.Start)
-    .margin({ left: $r('app.float.tip_comp_margin_left'), top: 20, right: $r('app.float.tip_comp_margin_right') })
+    .margin({ left: this.marginSpace, top: 20, right: this.marginSpace })
   }
 }

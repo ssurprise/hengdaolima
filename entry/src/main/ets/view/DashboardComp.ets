@@ -26,16 +26,16 @@ export struct DashboardComp {
       new CatalogItemInfo('弹性-Flex', 'pages/FlexPage'),
       new CatalogItemInfo('刷新-Refresh', 'pages/RefreshPage')]
     ],
-    ['image_shape', [
+    ['image_animation', [
       new CatalogItemInfo('图形', 'pages/ShapePage'),
-      new CatalogItemInfo('Canvas绘图', 'pages/CanvasPage')]
-    ],
-    ['animation', [
+      new CatalogItemInfo('Canvas绘图', 'pages/CanvasPage'),
       new CatalogItemInfo('显示动画', 'pages/AnimToPage'),
       new CatalogItemInfo('属性动画', 'pages/AnimationPage'),
       new CatalogItemInfo('json动画', 'pages/LottiePage')]
     ],
     ['arkts_base', [
+      new CatalogItemInfo('App管理能力', 'pages/AppManagerPage'),
+      new CatalogItemInfo('DataUriUtils', 'pages/DataUriUtilsPage'),
       new CatalogItemInfo('异步并发', 'pages/PromisePage')]
     ],
     ['data_manager', [
@@ -47,7 +47,8 @@ export struct DashboardComp {
       new CatalogItemInfo('Web页', 'pages/WebPage'),
       new CatalogItemInfo('通知-基础类型', 'pages/NotificationPage'),
       new CatalogItemInfo('弹窗', 'pages/AlertDialogPage'),
-      new CatalogItemInfo('拨打电话', 'pages/CallPage')]
+      new CatalogItemInfo('拨打电话', 'pages/CallPage'),
+      new CatalogItemInfo('设备信息', 'pages/DeviceInfoPage')]
     ]
   ])
 
