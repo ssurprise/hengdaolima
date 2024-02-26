@@ -34,6 +34,11 @@
     "pages/DeviceInfoPage",
     "pages/DataUriUtilsPage",
     "pages/AppManagerPage",
-    "pages/PickerPage"
+    "pages/PickerPage",
+    "pages/ArrayListPage",
+    "pages/LinkedListPage",
+    "pages/StackDcPage",
+    "pages/QueuePage",
+    "pages/DequePage"
   ]
 }

@@ -35,8 +35,13 @@ export struct DashboardComp {
       new CatalogItemInfo('json动画', 'pages/LottiePage')]
     ],
     ['arkts_base', [
-      new CatalogItemInfo('App管理能力', 'pages/AppManagerPage'),
+      new CatalogItemInfo('ArrayList', 'pages/ArrayListPage'),
+      new CatalogItemInfo('LinkedList', 'pages/LinkedListPage'),
+      new CatalogItemInfo('栈-Stack', 'pages/StackDcPage'),
+      new CatalogItemInfo('队列-Queue', 'pages/QueuePage'),
+      new CatalogItemInfo('双端队列-Deque', 'pages/DequePage'),
       new CatalogItemInfo('DataUriUtils', 'pages/DataUriUtilsPage'),
+      new CatalogItemInfo('App管理能力', 'pages/AppManagerPage'),
       new CatalogItemInfo('异步并发', 'pages/PromisePage')]
     ],
     ['data_manager', [
