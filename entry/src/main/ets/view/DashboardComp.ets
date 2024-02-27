@@ -29,6 +29,8 @@ export struct DashboardComp {
     ],
     ['image_animation', [
       new CatalogItemInfo('图形', 'pages/ShapePage'),
+      new CatalogItemInfo('图像变换', 'pages/PixelMapPage'),
+      new CatalogItemInfo('图像效果', 'pages/EffectKitPage'),
       new CatalogItemInfo('Canvas绘图', 'pages/CanvasPage'),
       new CatalogItemInfo('显示动画', 'pages/AnimToPage'),
       new CatalogItemInfo('属性动画', 'pages/AnimationPage'),

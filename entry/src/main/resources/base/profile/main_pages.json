@@ -39,6 +39,8 @@
     "pages/LinkedListPage",
     "pages/StackDcPage",
     "pages/QueuePage",
-    "pages/DequePage"
+    "pages/DequePage",
+    "pages/EffectKitPage",
+    "pages/PixelMapPage"
   ]
 }
