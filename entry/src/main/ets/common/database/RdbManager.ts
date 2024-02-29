@@ -20,7 +20,7 @@ export class RdbManager {
   private createBrowserHistoryDb(ctx: UIAbility) {
     const STORE_CONFIG = {
       name: 'browser_history.db', // 数据库文件名
-      securityLevel: relationalStore.SecurityLevel.S1 // 数据库安全级别
+      securityLevel: relationalStore.SecurityLevel.S2 // 数据库安全级别
     };
     relationalStore.getRdbStore(ctx.context, STORE_CONFIG, (err, store) => {
       if (err) {

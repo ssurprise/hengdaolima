@@ -48,7 +48,8 @@ export struct DashboardComp {
     ],
     ['data_manager', [
       new CatalogItemInfo('首选项', 'pages/PreferencePage'),
-      new CatalogItemInfo('关系型数据库', 'pages/RdbPage')]
+      new CatalogItemInfo('关系型数据库', 'pages/RdbPage'),
+      new CatalogItemInfo('应用文件路径', 'pages/FileDirPage')]
     ],
     ['practice', [
       new CatalogItemInfo('网络请求', 'pages/HttpRequestPage'),
