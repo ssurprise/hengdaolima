@@ -42,6 +42,8 @@
     "pages/DequePage",
     "pages/EffectKitPage",
     "pages/PixelMapPage",
-    "pages/FileDirPage"
+    "pages/FileDirPage",
+    "pages/FileFsPage",
+    "pages/FileTextCreatePage"
   ]
 }
