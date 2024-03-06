@@ -11,6 +11,7 @@ import fs from '@ohos.file.fs';
 @Entry
 @Component
 struct FileTextCreatePage {
+  readonly TAG: string = 'FileTextCreatePage'
   fileName: string = ''
   fileContent: string = ''
   @State txtContext: string = ''
@@ -30,10 +31,10 @@ struct FileTextCreatePage {
         this.renderFileName()
         this.renderFileContent()
         this.renderCreateBtn()
-        Text('')
-          .margin({ top: 5 })
-          .fontSize(12)
-          .fontColor('#ff4081')
+
+        TipsComp({ tipArray: [
+          '通过流（w、w+）的方式写入数据会把之前的内容给清掉，但是通过fs.write、fs.writeSync的方法写入是不会清除掉原有数据的。',
+        ] })
       }
       .width('100%')
       .layoutWeight(1)
@@ -70,7 +71,7 @@ struct FileTextCreatePage {
             if (this.fileName.length <= 0) {
               this.warning = '请输入文本名称'
             } else {
-
+              this.readFileContent()
             }
           })
       }
@@ -85,21 +86,16 @@ struct FileTextCreatePage {
     let filePath = `${getContext(this).filesDir}/${this.fileName}.txt`
     let isExit = await fs.access(filePath)
     if (!isExit) {
-      this.warning = "文件不存在"
+      this.warning = "文件不存在！"
       return
     }
-
     try {
-      let file = fs.openSync(filePath, fs.OpenMode.READ_ONLY)
-
+      let content = fs.readTextSync(filePath)
+      this.txtContext = content
+      this.logcat(`读取成功！ 内容：${content}`)
     } catch (e) {
-      this.warning = `error：${e}`
+      this.logcat(`读取失败，error：${e}`)
     }
-  }
-
-  async checkFileExit(): Promise {
-    let filePath = `${getContext(this).filesDir}/${this.fileName}.txt`
-    return fs.access(filePath);
   }
 
   @Builder renderFileContent() {
@@ -117,6 +113,7 @@ struct FileTextCreatePage {
         .placeholderFont({ size: 12, weight: FontWeight.Normal })
         .placeholderColor('#757575')
         .onChange((value: string) => {
+          console.log(this.TAG, 'TextArea-onChange:' + value)
           this.fileContent = value
         })
     }
@@ -139,36 +136,66 @@ struct FileTextCreatePage {
         .height(40)
         .fontSize(12)
         .onClick(() => {
-          if (this.fileName.length <= 0) {
-            this.warning = '请输入文本名称'
-          } else {
-            let path = `${getContext(this).filesDir}/${this.fileName}.txt`
-            fs.open(path, fs.OpenMode.READ_WRITE | fs.OpenMode.CREATE)
-              .then((file) => {
-                fs.write(file.fd, this.fileContent)
-                  .then((number) => {
-                    this.warning = `写入成功，共写入长度：${number}`
-                  })
-                  .catch((error) => {
-                    this.warning = `写入失败，原因：${error}`
-                  }).finally(() => {
-                  fs.closeSync(file.fd)
-                })
-
-              }).catch((error) => {
-              this.warning = `文件创建失败，原因：${error}`
-            })
-          }
+          this.writeFile()
         })
       Button('流方式方式写入')
         .height(40)
         .fontSize(12)
         .onClick(() => {
-
+          this.outputFile()
         })
     }
     .width('90%')
     .justifyContent(FlexAlign.SpaceBetween)
     .margin({ top: 10 })
+  }
+
+  private writeFile() {
+    if (this.fileName.length <= 0) {
+      this.warning = '请输入文本名称'
+    } else {
+      let path = `${getContext(this).filesDir}/${this.fileName}.txt`
+      fs.open(path, fs.OpenMode.READ_WRITE | fs.OpenMode.CREATE)
+        .then((file) => {
+          fs.write(file.fd, this.fileContent)
+            .then((number) => {
+              this.logcat(`写入成功，共写入长度：${number}`)
+            })
+            .catch((error) => {
+              this.logcat(`写入失败，原因：${error}`)
+            })
+            .finally(() => {
+              fs.closeSync(file.fd)
+            })
+        })
+        .catch((error) => {
+          this.logcat(`文件创建失败，原因：${error}`)
+        })
+    }
+  }
+
+  private async outputFile() {
+    if (this.fileName.length <= 0) {
+      this.warning = '请输入文本名称'
+    } else {
+      let path = `${getContext(this).filesDir}/${this.fileName}.txt`
+
+      let outputStream = fs.createStreamSync(path, "w+");
+      outputStream.write(this.fileContent)
+        .then((number) => {
+          this.logcat(`（流）写入成功，共写入长度：${number}`)
+        })
+        .catch((error) => {
+          this.logcat(`（流）写入失败，原因：${error}`)
+        })
+        .finally(() => {
+          outputStream.close()
+        })
+    }
+  }
+
+  private logcat(t: string) {
+    console.log(this.TAG, t)
+    this.warning = t
   }
 }
