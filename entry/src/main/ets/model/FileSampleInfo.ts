@@ -9,4 +9,8 @@ export class FileSampleInfo {
   name: string
   size: number
   type: string
+
+  toString(): string {
+    return `FileSampleInfo[ name:${this.name}, path:${this.path}, size:${this.size}字节 ]`
+  }
 }
