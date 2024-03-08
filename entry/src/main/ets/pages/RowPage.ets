@@ -198,9 +198,10 @@ struct RowPage {
 
   @Builder renderTips() {
     TipsComp({ tipArray: [
-      'FlexAlign.SpaceAround：水平方向方向均匀分配元素，相邻元素之间距离相同。第一个元素到行首的距离和最后一个元素到行尾的距离是相邻元素之间距离的一半。',
-      'FlexAlign.SpaceEvenly：水平方向方向均匀分配元素，相邻元素之间的距离、第一个元素与行首的间距、最后一个元素到行尾的间距都完全一样。',
-      '使用Blank组件也可以实现SpaceBetween的效果'
+      'FlexAlign.SpaceAround：相邻元素之间距离相同，第一个元素到行首的距离和最后一个元素到行尾的距离是相邻元素之间距离的一半。',
+      'FlexAlign.SpaceEvenly：相邻元素之间的距离、第一个元素与行首的间距、最后一个元素到行尾的间距都完全一样。',
+      '使用Blank组件也可以实现SpaceBetween的效果。',
+      '和Flex区别：① Flex组件主轴默认不设置时撑满父容器，Column、Row组件主轴不设置时默认是跟随子节点大小。② Flex组件在渲染时存在二次布局过程。'
     ] })
   }
 }

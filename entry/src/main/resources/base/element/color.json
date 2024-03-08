@@ -85,6 +85,10 @@
       "value": "#212121"
     },
     {
+      "name": "secondary_txt_color",
+      "value": "#757575"
+    },
+    {
       "name": "primary_color",
       "value": "#ff4081"
     },

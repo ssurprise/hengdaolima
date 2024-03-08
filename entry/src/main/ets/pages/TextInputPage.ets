@@ -13,6 +13,7 @@ struct TextInputPage {
 
       this.renderTextInput()
       this.renderTextArea()
+      this.renderCustomStyle()
       this.renderTips()
     }
     .alignItems(HorizontalAlign.Start)
@@ -49,10 +50,27 @@ struct TextInputPage {
       })
   }
 
+  @Builder renderCustomStyle() {
+    Text('自定义样式')
+      .margin({ left: 15, top: 20 })
+
+    TextInput({ placeholder: '自定义样式', text: '123456', })
+      .width('80%')
+      .margin({ left: 15, top: 3 })
+      .padding(5)
+      .caretColor(Color.Blue)
+      .borderRadius(0)
+      .backgroundColor(Color.Yellow)
+      .borderWidth({ left: 1, top: 0, right: 1, bottom: 5 })
+      .borderColor({ left: '#ff4081', top: '#007DFF', right: '#ff4081', bottom: Color.Green })
+  }
+
   @Builder renderTips() {
     TipsComp({
       tipArray: [
-        '样式无法修改。想把输入框样式换乘下划线样式，但是发现即使背景换了，输入区和组件的底边还是有间距，如果高度调的小，那么输入区就被裁减了！有点拉跨'
+        '通用属性padding的默认值为：{top: 8 vp, right: 16 vp, bottom: 8 vp, left: 16 vp }',
+        '自定义样式按需修改 padding、borderRadius、backgroundColor属性，默认的样式中配置了这几个属性。',
+        '光标宽1.5vp，光标高度与文本选中底板高度和字体大小相关。 目前暂未找到可以自定义光标样式的api！'
       ]
     })
   }

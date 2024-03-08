@@ -134,6 +134,7 @@ struct ImagePage {
 
   @Builder renderTips() {
     TipsComp({ tipArray: [
+      '没有子组件',
       'overlay属性配置的内容可显示在组件之外，不受组件的宽高影响'
     ] })
   }

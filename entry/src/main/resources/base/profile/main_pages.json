@@ -44,6 +44,8 @@
     "pages/PixelMapPage",
     "pages/FileDirPage",
     "pages/FileFsPage",
-    "pages/FileTextCreatePage"
+    "pages/FileTextCreatePage",
+    "pages/FilePickerPage",
+    "pages/PermissionPage"
   ]
 }

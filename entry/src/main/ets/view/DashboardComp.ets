@@ -51,10 +51,12 @@ export struct DashboardComp {
       new CatalogItemInfo('关系型数据库', 'pages/RdbPage'),
       new CatalogItemInfo('应用文件路径', 'pages/FileDirPage'),
       new CatalogItemInfo('文件访问', 'pages/FileFsPage'),
-      new CatalogItemInfo('创建文本文件', 'pages/FileTextCreatePage')]
+      new CatalogItemInfo('创建文本文件', 'pages/FileTextCreatePage'),
+      new CatalogItemInfo('文件选择器', 'pages/FilePickerPage')]
     ],
     ['practice', [
       new CatalogItemInfo('网络请求', 'pages/HttpRequestPage'),
+      new CatalogItemInfo('权限', 'pages/PermissionPage'),
       new CatalogItemInfo('Web页', 'pages/WebPage'),
       new CatalogItemInfo('通知-基础类型', 'pages/NotificationPage'),
       new CatalogItemInfo('弹窗', 'pages/AlertDialogPage'),
