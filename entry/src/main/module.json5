@@ -11,20 +11,22 @@
     "deliveryWithInstall": true,
     "installationFree": false,
     "pages": "$profile:main_pages",
-    "requestPermissions": [
-      {
-        "name": "ohos.permission.INTERNET"
-      }
-    ],
     "abilities": [
       {
-        "name": "EntryAbility",// UIAbility组件的名称
-        "srcEntry": "./ets/entryability/EntryAbility.ts",// UIAbility组件的代码路径
-        "description": "$string:ability_desc", // UIAbility组件的描述信息
-        "icon": "$media:ic_launcher",// UIAbility组件的图标
-        "label": "$string:ability_label", // UIAbility组件的标签
-        "startWindowIcon": "$media:icon",// UIAbility组件启动页面图标资源文件的索引
-        "startWindowBackground": "$color:start_window_background",// UIAbility组件启动页面背景颜色资源文件的索引
+        "name": "EntryAbility",
+        // UIAbility组件的名称
+        "srcEntry": "./ets/entryability/EntryAbility.ts",
+        // UIAbility组件的代码路径
+        "description": "$string:ability_desc",
+        // UIAbility组件的描述信息
+        "icon": "$media:ic_launcher",
+        // UIAbility组件的图标
+        "label": "$string:ability_label",
+        // UIAbility组件的标签
+        "startWindowIcon": "$media:icon",
+        // UIAbility组件启动页面图标资源文件的索引
+        "startWindowBackground": "$color:start_window_background",
+        // UIAbility组件启动页面背景颜色资源文件的索引
         "exported": true,
         "skills": [
           {
@@ -36,6 +38,80 @@
             ]
           }
         ]
+      }
+    ],
+    "requestPermissions": [
+      {
+        "name": "ohos.permission.INTERNET"
+      },
+      {
+        "name": "ohos.permission.CAMERA",
+        // 描述申请权限的原因。当申请的权限为user_grant权限时，此字段必填。
+        "reason": '$string:permission_test_camera',
+        // 描述权限使用的场景和时机。当申请的权限为user_grant权限时，此字段必填。
+        "usedScene": {
+          "abilities": [
+            // 标识需要使用到该权限的Ability，标签为数组形式。
+            "EntryAbility"
+          ],
+          // 标识权限使用的时机，值为inuse/always。- inuse：表示为仅允许前台使用。- always：表示前后台都可使用。
+          "when": "always"
+        }
+      },
+      {
+        // 允许应用使用麦克风
+        "name": "ohos.permission.MICROPHONE",
+        "reason": '$string:permission_test_microphone',
+        "usedScene": {
+          "abilities": [
+            "EntryAbility"
+          ],
+          "when": "always"
+        }
+      },
+      {
+        //允许应用获取设备位置信息
+        "name": "ohos.permission.LOCATION",
+        "reason": '$string:permission_test_location',
+        "usedScene": {
+          "abilities": [
+            "EntryAbility"
+          ],
+          "when": "always"
+        }
+      },
+      {
+        // 模糊定位。使用API version 9及API version 9以上版本的SDK开发的应用，在申请 LOCATION 之前需要先申请该权限
+        "name": "ohos.permission.APPROXIMATELY_LOCATION",
+        "reason": '$string:permission_test_approximately_location',
+        "usedScene": {
+          "abilities": [
+            "EntryAbility"
+          ],
+          "when": "always"
+        }
+      },
+      {
+        //允许应用读取用户外部存储中的媒体文件信息
+        "name": "ohos.permission.READ_MEDIA",
+        "reason": '$string:permission_test_read_media',
+        "usedScene": {
+          "abilities": [
+            "EntryAbility"
+          ],
+          "when": "always"
+        }
+      },
+      {
+        //允许应用读写用户外部存储中的媒体文件信息
+        "name": "ohos.permission.WRITE_MEDIA",
+        "reason": '$string:permission_test_write_media',
+        "usedScene": {
+          "abilities": [
+            "EntryAbility"
+          ],
+          "when": "always"
+        }
       }
     ]
   }

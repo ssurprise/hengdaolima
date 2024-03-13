@@ -61,8 +61,9 @@ _________
 ### 其他
 _________
 1. 网络请求
-2. 通知-基础类型
-3. 通知管理-notificationManager
-4. 弹窗
-5. 拨打电话-telephony.call
-6. 设备信息-deviceInfo
+2. 权限管理-abilityAccessCtrl
+3. 通知-基础类型
+4. 通知管理-notificationManager
+5. 弹窗
+6. 拨打电话-telephony.call
+7. 设备信息-deviceInfo
