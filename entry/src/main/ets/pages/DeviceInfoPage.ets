@@ -5,11 +5,20 @@ import { TipsComp } from '../view/TipsComp'
 @Entry
 @Component
 struct DeviceInfoPage {
-
   build() {
     Column() {
       TitleComp({ titleName: '设备信息' })
       Column() {
+
+        Text('注：该页面主要介绍的是 @ohos.deviceInfo 模块提供的功能')
+          .fontSize(12)
+          .fontColor('#ff4081')
+          .alignSelf(ItemAlign.Start)
+          .padding(10)
+          .backgroundColor('#f5f5f5')
+          .fontWeight(FontWeight.Regular)
+          .margin({ top: 10 })
+
         this.createTextComp('设备类型', `${deviceInfo.deviceType}`, 20)
         this.createTextComp('设备厂家名称', `${deviceInfo.manufacture}`)
         this.createTextComp('设备品牌名称', `${deviceInfo.brand}`)
@@ -41,6 +50,7 @@ struct DeviceInfoPage {
         })
       }
       .width('100%')
+      .layoutWeight(1)
       .padding({ left: $r('app.float.page_space_left'), right: $r('app.float.page_space_right') })
       .alignItems(HorizontalAlign.Start)
     }

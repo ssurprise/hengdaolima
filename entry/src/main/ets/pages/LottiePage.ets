@@ -25,28 +25,42 @@ struct LottiePage {
     Column() {
       TitleComp({ titleName: 'json动画-Lottie' })
 
-      Canvas(this.renderingContext)
-        .backgroundColor('#22757575')
-        .width('70%')
-        .height(160)
-        .alignSelf(ItemAlign.Center)
-        .onReady(() => {
-          console.info(this.TAG, 'Canvas-onReady')
-        })
-        .onAppear(() => {
-          console.info(this.TAG, 'Canvas-onAppear')
-        })
-        .onDisAppear(() => {
-          console.info(this.TAG, 'Canvas-onDisAppear')
-          lottie.destroy(this.animateName);
-        })
-        .margin({ top: 20 })
-      Text(`动画总帧数：${this.frameCount}`)
-        .margin({ left: 15 })
-        .fontSize(10)
-        .fontStyle(FontStyle.Italic)
+      Column() {
+        Text('注：该页面主要介绍的是第三方库 @ohos/lottie 提供的动画功能')
+          .fontSize(12)
+          .fontColor('#ff4081')
+          .alignSelf(ItemAlign.Start)
+          .fontWeight(FontWeight.Regular)
+          .margin({ top: 10 })
 
-      this.renderController()
+        Canvas(this.renderingContext)
+          .backgroundColor('#22757575')
+          .width('70%')
+          .height(160)
+          .alignSelf(ItemAlign.Center)
+          .onReady(() => {
+            console.info(this.TAG, 'Canvas-onReady')
+          })
+          .onAppear(() => {
+            console.info(this.TAG, 'Canvas-onAppear')
+          })
+          .onDisAppear(() => {
+            console.info(this.TAG, 'Canvas-onDisAppear')
+            lottie.destroy(this.animateName);
+          })
+          .margin({ top: 20 })
+
+        Text(`动画总帧数：${this.frameCount}`)
+          .fontSize(10)
+          .fontStyle(FontStyle.Italic)
+
+        this.renderController()
+      }
+      .width('100%')
+      .layoutWeight(1)
+      .padding({ left: 15, right: 15 })
+      .backgroundColor('#f5f5f5')
+      .alignItems(HorizontalAlign.Start)
     }
     .alignItems(HorizontalAlign.Start)
     .width('100%')
@@ -100,6 +114,6 @@ struct LottiePage {
           }
         })
     }
-    .margin({ top: 15, left: 15, right: 15 })
+    .margin({ top: 15 })
   }
 }

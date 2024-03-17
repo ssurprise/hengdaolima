@@ -20,11 +20,20 @@ struct NotificationPage {
     Column() {
       TitleComp({ titleName: '通知' })
 
+      Text('注：该页面主要介绍的是 @ohos.notificationManager 模块提供的功能')
+        .fontSize(12)
+        .fontColor('#ff4081')
+        .alignSelf(ItemAlign.Start)
+        .padding(10)
+        .backgroundColor('#f5f5f5')
+        .fontWeight(FontWeight.Regular)
+        .margin({ left: 15, top: 10, right: 15 })
+
       this.renderContentType()
       this.renderForm()
 
       Button('发送')
-        .height(40)
+        .height(32)
         .width(80)
         .margin({ top: 10, right: 30 })
         .alignSelf(ItemAlign.End)
