@@ -6,20 +6,21 @@
 ___
 1. 文本 Text
 2. 输入框 TextInput/TextArea
-3. 图像 Image
-4. 单选 Radio
-5. 跑马灯-Marquee
-6. 进度条 Progress
-7. 线性布局 Row
-8. 层叠布局 Stack
-9. 轮播 Swiper
-10. List
-11. Grid
-12. 弹性组件 Flex
-13. 刷新组件 Refresh
-14. 日期/时间选择器
-15. 文本选择器
-16. web加载
+3. 按钮 Button
+4. 图像 Image
+5. 单选 Radio
+6. 跑马灯-Marquee
+7. 进度条 Progress
+8. 线性布局 Row
+9. 层叠布局 Stack
+10. 轮播 Swiper
+11. List
+12. Grid
+13. 弹性组件 Flex
+14. 刷新组件 Refresh
+15. 日期/时间选择器
+16. 文本选择器
+17. web加载
 
 
 ### 图像

@@ -13,7 +13,8 @@ export struct DashboardComp {
     ['component', [
       new CatalogItemInfo('文本', CommonConstants.ROUTER_TEXT_PAGE_URL),
       new CatalogItemInfo('输入框', 'pages/TextInputPage'),
-      new CatalogItemInfo('图像', CommonConstants.ROUTER_IMAGE_PAGE_URL),
+      new CatalogItemInfo('按钮-Button', 'pages/ButtonPage'),
+      new CatalogItemInfo('图像-Image', CommonConstants.ROUTER_IMAGE_PAGE_URL),
       new CatalogItemInfo('单选-Radio', 'pages/RadioPage'),
       new CatalogItemInfo('跑马灯-Marquee', 'pages/MarqueePage'),
       new CatalogItemInfo('进度条-Progress', 'pages/ProgressPage'),
