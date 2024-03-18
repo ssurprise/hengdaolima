@@ -24,6 +24,18 @@
       "name": "password",
       "value": "Password"
     },
+   {
+      "name": "home",
+      "value": "首页"
+    },
+   {
+      "name": "catalog",
+      "value": "目录"
+    },
+  {
+      "name": "my",
+      "value": "我的"
+    },
     {
       "name": "login",
       "value": "Login"

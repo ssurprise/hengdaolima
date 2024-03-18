@@ -47,6 +47,7 @@
     "pages/FileTextCreatePage",
     "pages/FilePickerPage",
     "pages/PermissionPage",
-    "pages/ButtonPage"
+    "pages/ButtonPage",
+    "pages/WaterFlowPage"
   ]
 }
