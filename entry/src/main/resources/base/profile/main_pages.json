@@ -48,6 +48,7 @@
     "pages/FilePickerPage",
     "pages/PermissionPage",
     "pages/ButtonPage",
-    "pages/WaterFlowPage"
+    "pages/WaterFlowPage",
+    "pages/PxAndVpPage"
   ]
 }

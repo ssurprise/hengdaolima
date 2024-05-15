@@ -68,3 +68,4 @@ _________
 5. 弹窗
 6. 拨打电话-telephony.call
 7. 设备信息-deviceInfo
+8. 像素单位转换

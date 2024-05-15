@@ -62,7 +62,8 @@ export struct DashboardComp {
       new CatalogItemInfo('通知-基础类型', 'pages/NotificationPage'),
       new CatalogItemInfo('弹窗', 'pages/AlertDialogPage'),
       new CatalogItemInfo('拨打电话', 'pages/CallPage'),
-      new CatalogItemInfo('设备信息', 'pages/DeviceInfoPage')]
+      new CatalogItemInfo('设备信息', 'pages/DeviceInfoPage'),
+      new CatalogItemInfo('Px<=>Vp', 'pages/PxAndVpPage')]
     ]
   ])
 
