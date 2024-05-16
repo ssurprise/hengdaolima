@@ -31,9 +31,10 @@ struct PixelMapPage {
 
   build() {
     Column() {
-      TitleComp({ titleName: '图像变换' })
+      TitleComp({ titleName: '图片处理' })
       Column() {
-        Text('注：图片处理指对PixelMap进行相关的操作，如获取图片信息、裁剪、缩放、偏移、旋转、翻转、设置透明度、读写像素数据等。 主要为 @ohos.multimedia.image 模块提供的功能')
+        Text('注：该页面主要介绍的是 @ohos.multimedia.image 模块提供的功能，包括通过属性创建PixelMap、读取图像像素数据、读取区域内的图片数据等。' +
+        '图片处理指对PixelMap进行相关的操作，如获取图片信息、裁剪、缩放、偏移、旋转、翻转、设置透明度、读写像素数据等。')
           .fontSize(12)
           .fontColor('#ff4081')
           .fontWeight(FontWeight.Regular)
@@ -218,10 +219,10 @@ struct PixelMapPage {
       Text(this.actionTip)
         .width('100%')
         .fontSize(10)
-        .fontColor('#ffffff')
+        .fontColor('#212121')
         .padding({ left: 10, top: 5, right: 10, bottom: 5 })
-        .margin({ top: 3 })
-        .borderRadius(10)
+        .margin({ top: 8 })
+        .borderRadius(5)
         .backgroundColor('#22ff4081')
     }
   }

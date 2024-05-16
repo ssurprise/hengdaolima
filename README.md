@@ -27,7 +27,7 @@ ___
 _________
 1. 图形（圆、椭圆、矩形、折线）
 2. canvas 绘图
-3. 图像变换-image.PixelMap
+3. 图片处理-image.PixelMap
 4. 图像效果-effectKit
 
 
