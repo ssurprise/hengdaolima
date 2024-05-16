@@ -49,6 +49,7 @@
     "pages/PermissionPage",
     "pages/ButtonPage",
     "pages/WaterFlowPage",
-    "pages/PxAndVpPage"
+    "pages/PxAndVpPage",
+    "pages/ToastPage"
   ]
 }
