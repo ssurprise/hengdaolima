@@ -50,6 +50,7 @@
     "pages/ButtonPage",
     "pages/WaterFlowPage",
     "pages/PxAndVpPage",
-    "pages/ToastPage"
+    "pages/ToastPage",
+    "pages/TimeIntervalPage"
   ]
 }

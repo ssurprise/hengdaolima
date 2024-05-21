@@ -72,6 +72,7 @@ struct ListsPage {
 
   @Builder renderTips() {
     TipsComp({ tipArray: [
+      'List的子组件必须是ListItemGroup或ListItem，ListItem和ListItemGroup必须配合List来使用。',
       'divider 可以和 space 同时设置。当divider的`strokeWidth`小于space时，会现在space的中间位置显示。如果 divider 的`strokeWidth`大于space的宽度，则会使用`strokeWidth`的宽度。'
     ] })
   }

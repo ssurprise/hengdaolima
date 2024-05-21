@@ -86,6 +86,7 @@ struct ListPage2 {
   @Builder renderTips() {
     TipsComp({ tipArray: [
       '分割线和space间距是针对 ListItemGroup 而不是 ListItem',
+      'ListItemGroup作为一个整体计算一个索引,不计算ListItemGroup内部ListItem的索引值。',
       'onScrollIndex 方法回调中返回的 start和end 也是针对 ListItemGroup的，也可以印证上面的问题'
     ] })
   }
