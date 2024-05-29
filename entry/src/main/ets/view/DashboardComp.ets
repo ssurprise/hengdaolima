@@ -27,7 +27,8 @@ export struct DashboardComp {
       new CatalogItemInfo('弹性-Flex', 'pages/FlexPage'),
       new CatalogItemInfo('刷新-Refresh', 'pages/RefreshPage'),
       new CatalogItemInfo('选择器-Picker', 'pages/PickerPage'),
-      new CatalogItemInfo('搜索框-Search', 'pages/SearchPage')]
+      new CatalogItemInfo('搜索框-Search', 'pages/SearchPage'),
+      new CatalogItemInfo('瀑布流-WaterFlow', 'pages/WaterFlowPage')]
     ],
     ['image_animation', [
       new CatalogItemInfo('图形', 'pages/ShapePage'),
