@@ -31,7 +31,7 @@ struct ShapePage {
    * 圆
    */
   @Builder renderCircle() {
-    Text('圆：')
+    Text('圆：Circle组件')
       .fontSize(14)
       .margin({ top: 20 })
       .fontWeight(FontWeight.Medium)
@@ -66,7 +66,7 @@ struct ShapePage {
    * 椭圆
    */
   @Builder renderEllipse() {
-    Text('椭圆：')
+    Text('椭圆：Ellipse组件')
       .fontSize(14)
       .margin({ top: 20 })
       .fontWeight(FontWeight.Medium)
@@ -101,7 +101,7 @@ struct ShapePage {
    * 折线
    */
   @Builder renderPolyline() {
-    Text('折线：')
+    Text('折线：Polyline组件')
       .fontSize(14)
       .margin({ top: 20 })
       .fontWeight(FontWeight.Medium)
@@ -139,7 +139,7 @@ struct ShapePage {
    * 矩形
    */
   @Builder renderRect() {
-    Text('矩形：')
+    Text('矩形：Rect组件')
       .fontSize(14)
       .margin({ top: 20 })
       .fontWeight(FontWeight.Medium)

@@ -51,6 +51,8 @@
     "pages/WaterFlowPage",
     "pages/PxAndVpPage",
     "pages/ToastPage",
-    "pages/TimeIntervalPage"
+    "pages/TimeIntervalPage",
+    "pages/SearchPage",
+    "pages/TransformPage"
   ]
 }

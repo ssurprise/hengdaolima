@@ -28,7 +28,7 @@ struct TimeIntervalPage {
         this.renderIntervalConfig()
 
         List() {
-          ForEach(this.recordsArray, (item: string, index?: number) => {
+          ForEach(this.recordsArray, (item: string) => {
             ListItem() {
               Text(item)
                 .width('100%')
@@ -180,10 +180,17 @@ struct TimeIntervalPage {
         .onClick(() => {
           if (this.intervalId == 0) {
             this.intervalId = setInterval(() => {
-              this.recordsArray.push(`周期任务=>执行，time=`)
+              systemDateTime.getDate().then((date) => {
+                this.recordsArray.push(`周期任务=>执行，time=${date.toTimeString()}`)
+              })
             }, this.intervalTime)
 
-            this.recordsArray.push(`启动周期任务， id=${this.intervalId}`)
+            // 任务启动记录
+            systemDateTime.getDate().then((date) => {
+              this.recordsArray.push(`启动周期任务，id=${this.intervalId}，time=${date.toTimeString()}`)
+            }).catch((error) => {
+              console.info(`Failed to get date. message:${error.message}, code:${error.code}`);
+            })
 
           } else {
             promptAction.showToast({ message: `当前有正在运行中的定时任务，intervalId = ${this.intervalId}` })

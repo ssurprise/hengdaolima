@@ -26,12 +26,14 @@ export struct DashboardComp {
       new CatalogItemInfo('网格-Grid', 'pages/GridPage'),
       new CatalogItemInfo('弹性-Flex', 'pages/FlexPage'),
       new CatalogItemInfo('刷新-Refresh', 'pages/RefreshPage'),
-      new CatalogItemInfo('选择器-Picker', 'pages/PickerPage')]
+      new CatalogItemInfo('选择器-Picker', 'pages/PickerPage'),
+      new CatalogItemInfo('搜索框-Search', 'pages/SearchPage')]
     ],
     ['image_animation', [
       new CatalogItemInfo('图形', 'pages/ShapePage'),
       new CatalogItemInfo('图片处理', 'pages/PixelMapPage'),
       new CatalogItemInfo('图像效果', 'pages/EffectKitPage'),
+      new CatalogItemInfo('图形变换', 'pages/TransformPage'),
       new CatalogItemInfo('Canvas绘图', 'pages/CanvasPage'),
       new CatalogItemInfo('显示动画', 'pages/AnimToPage'),
       new CatalogItemInfo('属性动画', 'pages/AnimationPage'),
@@ -75,14 +77,14 @@ export struct DashboardComp {
         ForEach(this.mDashboardArray, (item: CatalogItemInfo, index: Number) => {
           GridItem() {
             Text(item.name)
-              .fontSize(14)
-              .fontColor(Color.White)
-              .fontWeight(FontWeight.Medium)
-              .fontStyle(FontStyle.Normal)
-              .backgroundColor(0x007DFF)
-              .borderRadius(10)
               .width('100%')
               .height('100%')
+              .padding({ left: 5, right: 5 })
+              .fontSize(12)
+              .fontColor(Color.White)
+              .fontWeight(FontWeight.Medium)
+              .backgroundColor(0x007DFF)
+              .borderRadius(8)
               .textAlign(TextAlign.Center)
           }
           .height('50vp')
@@ -97,9 +99,9 @@ export struct DashboardComp {
           // @ts-ignore
         }, (item: CatalogItemInfo) => item.name)
       }
-      .columnsTemplate('1fr 1fr 1fr  1fr') //仅设置columnsTemplate时，Grid主轴为垂直方向，交叉轴为水平方向。
-      .columnsGap(10)
-      .rowsGap(10)
+      .columnsTemplate('1fr 1fr 1fr 1fr') //仅设置columnsTemplate时，Grid主轴为垂直方向，交叉轴为水平方向。
+      .columnsGap(8)
+      .rowsGap(8)
       .padding(10)
     } else {
       Text('暂无数据')
