@@ -1,6 +1,20 @@
 {
   "app": {
-    "signingConfigs": [],
+    "signingConfigs": [
+      {
+        "name": "default",
+        "type": "HarmonyOS",
+        "material": {
+          "certpath": "/Users/shiguotao/.ohos/config/auto_debug_hengdaolima_com.hengdao.lima_260086000092885606.cer",
+          "storePassword": "0000001AE66DE377F62C4D66D0A2F506097C6BEE360C889C71481234EEA843F3DC8EBABCA12A07621E9E",
+          "keyAlias": "debugKey",
+          "keyPassword": "0000001A3A2730FBDDF538E543FB36B2791BDC867405D2E374ADB1713077F9FF996ED5CC544090BDAD84",
+          "profile": "/Users/shiguotao/.ohos/config/auto_debug_hengdaolima_com.hengdao.lima_260086000092885606.p7b",
+          "signAlg": "SHA256withECDSA",
+          "storeFile": "/Users/shiguotao/.ohos/config/auto_debug_hengdaolima_com.hengdao.lima_260086000092885606.p12"
+        }
+      }
+    ],
     "compileSdkVersion": 9,
     "compatibleSdkVersion": 9,
     "products": [

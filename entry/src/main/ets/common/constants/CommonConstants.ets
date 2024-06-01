@@ -197,11 +197,6 @@ export class CommonConstants {
    */
   static readonly CUSTOMER_SERVICE_PAGE_URL: string = 'pages/CustomerServicePage';
   static readonly ROUTER_CATALOG_PAGE_URL: string = 'pages/CatalogPage';
-  static readonly ROUTER_TEXT_PAGE_URL: string = 'pages/TextPage';
-  static readonly ROUTER_IMAGE_PAGE_URL: string = 'pages/ImagePage';
-  static readonly ROUTER_ROW_PAGE_URL: string = 'pages/RowPage';
-  static readonly ROUTER_LIST_PAGE_URL: string = 'pages/ListsPage';
-  static readonly ROUTER_GRID_PAGE_URL: string = 'pages/GridPage';
 
   /**
    * Percent of the text input.

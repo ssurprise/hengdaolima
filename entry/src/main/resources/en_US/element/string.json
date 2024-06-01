@@ -81,8 +81,68 @@
       "value": "Contact customer service"
     },
     {
+      "name": "home",
+      "value": "home"
+    },
+    {
+      "name": "catalog",
+      "value": "catalog"
+    },
+    {
+      "name": "my",
+      "value": "my"
+    },
+    {
       "name": "catalog_text",
       "value": "catalog"
+    },
+    {
+      "name": "pull_up_load_text",
+      "value": "Loading in..."
+    },
+    {
+      "name": "pull_down_refresh_text",
+      "value": "The drop-down refresh"
+    },
+    {
+      "name": "release_refresh_text",
+      "value": "Loosen the refresh"
+    },
+    {
+      "name": "refreshing_text",
+      "value": "Is refreshing"
+    },
+    {
+      "name": "refresh_success_text",
+      "value": "Refresh the success"
+    },
+    {
+      "name": "refresh_fail_text",
+      "value": "Refresh the failure"
+    },
+    {
+      "name": "permission_test_camera",
+      "value": "允许应用使用相机拍摄照片和录制视频"
+    },
+    {
+      "name": "permission_test_microphone",
+      "value": "允许应用使用麦克风"
+    },
+    {
+      "name": "permission_test_approximately_location",
+      "value": "允许应用获取设备模糊位置信息"
+    },
+    {
+      "name": "permission_test_location",
+      "value": "允许应用获取设备位置信息"
+    },
+    {
+      "name": "permission_test_read_media",
+      "value": "允许应用读取用户外部存储中的媒体文件信息"
+    },
+    {
+      "name": "permission_test_write_media",
+      "value": "允许应用读写用户外部存储中的媒体文件信息"
     }
   ]
 }
