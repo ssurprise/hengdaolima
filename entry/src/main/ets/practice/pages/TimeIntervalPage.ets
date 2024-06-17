@@ -221,7 +221,7 @@ struct TimeIntervalPage {
 
   cancelInterval(): Boolean {
     if (this.intervalId != 0) {
-      clearInterval(this.intervalTime)
+      clearInterval(this.intervalId)
       this.recordsArray.push(`取消周期任务，intervalId=${this.intervalId}`)
       this.intervalId = 0
       return true
