@@ -43,7 +43,7 @@ export default class EntryAbility extends UIAbility {
 
 
     // 需要指定启动页面，否则应用启动后会因为没有默认加载页面而导致白屏
-    windowStage.loadContent("home/page/MainPage", (err, data) => {
+    windowStage.loadContent("home/pages/MainPage", (err, data) => {
       if (err.code) {
         hilog.error(0x0000, this.TAG, 'Failed to load the content. Cause: %{public}s', JSON.stringify(err) ?? '');
         return;

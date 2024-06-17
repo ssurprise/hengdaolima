@@ -27,7 +27,7 @@ struct ArrayListPage {
 
         TipsComp({
           tipArray: [
-            'ArrayList是一种线性数据结构，底层基于数组实现。ArrayList会根据实际需要动态调整容量，每次扩容增加50%。',
+            'ArrayList是一种线性数据结构，底层基于数组实现。初始容量大小为10，并支持动态扩容，每次扩容大小为原始容量的1.5倍。',
             'Vector和ArrayList和相似，都是基于数组实现，但Vector每次扩容增加1倍，而且从api 9 开始已经废弃了Vector，推荐使用ArrayList'
           ], marginSpace: 0 }
         )

@@ -33,12 +33,12 @@ struct DequePage {
 
         TipsComp({
           tipArray: [
-            'Deque（double ended queue）根据循环队列的数据结构实现，符合先进先出以及先进后出的特点。Deque会根据实际需要动态调整容量，每次进行两倍扩容。',
-            'Deque和Queue相比，Queue的特点是先进先出，只能在头部删除元素，尾部增加元素，而Deque支持两端的元素插入和移除',
-            '与Vector相比，它们都支持在两端增删元素，但Deque不能进行中间插入的操作。对头部元素的插入删除效率高于Vector，而Vector访问元素的效率高于Deque。',
-            '推荐使用场景： 需要频繁在集合两端进行增删元素的操作时，推荐使用Deque。',
+            'Deque（double ended queue）底层采用循环队列实现，符合先进先出以及先进后出的特点。其初始容量大小为8，支持动态扩容，每次扩容大小为原始容量的2倍。',
             'Deque 可以通过forEach方法，或者通过 Symbol.iterator 获取迭代器来进行循环遍历',
-            'Deque 没有 clone 方法'
+            'Deque 没有 clone 方法',
+            '推荐使用场景： 需要频繁在集合两端进行增删元素的操作时，推荐使用Deque。',
+            'Deque和Queue相比，Queue的特点是先进先出，只能在头部删除元素，尾部增加元素，而Deque支持两端的元素插入和移除',
+            'Deque和与Vector相比，它们都支持在两端增删元素，但Deque不能进行中间插入的操作。对头部元素的插入删除效率高于Vector，而Vector访问元素的效率高于Deque。'
           ], marginSpace: 0 }
         )
       }

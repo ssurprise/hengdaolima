@@ -47,9 +47,10 @@ _________
 3. 栈-Stack
 4. 队列-Queue
 5. 双端队列-Deque
-6. DataUriUtils
-7. App管理能力-appManager
-8. 异步并发-promise和async/await
+6. 排序算法
+7. DataUriUtils
+8. App管理能力-appManager
+9. 异步并发-promise和async/await
 
 
 ### 数据管理

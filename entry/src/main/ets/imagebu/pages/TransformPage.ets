@@ -7,15 +7,15 @@ struct TransformPage {
   @State mAngle: number = 0;
   @State mTranslateX: number = 0;
   @State mTranslateY: number = 0;
-  @State mScaleX: number = 1;
-  @State mScaleY: number = 1;
+  @State mScaleX: number = 1.0;
+  @State mScaleY: number = 1.0;
 
   build() {
     Column() {
       TitleComp({ titleName: '图形变换' })
 
       Column() {
-        Text('注：该页面主要介绍的是对 \'组件\' 进行的旋转、平移、缩放、矩阵变换等操作。')
+        Text('注：该页面主要介绍的是对 \'组件\' 进行的旋转（rotate）、平移（translate）、缩放（scale）、矩阵变换（transform）等操作。')
           .fontSize(12)
           .fontColor('#ff4081')
           .fontWeight(FontWeight.Regular)
@@ -77,12 +77,20 @@ struct TransformPage {
   }
 
   @Builder renderController() {
-    // 旋转
+    this.renderRotateController()
+    this.renderTranslateController()
+    this.renderScaleController()
+  }
+
+  /**
+   * 旋转
+   */
+  @Builder renderRotateController() {
     Text('旋转角度')
       .fontColor('#212121')
       .fontSize(14)
       .fontWeight(FontWeight.Medium)
-      .margin({ top: 40 })
+      .margin({ top: 80 })
     Text('注：此处案例的旋转轴为Z轴，旋转中心点为组件的中心点')
       .fontColor('#ff4081')
       .fontSize(12)
@@ -114,8 +122,9 @@ struct TransformPage {
     }
     .width('100%')
     .alignItems(VerticalAlign.Center)
+  }
 
-    // 平移
+  @Builder renderTranslateController() {
     Text('X轴平移')
       .fontColor('#212121')
       .fontSize(14)
@@ -185,27 +194,29 @@ struct TransformPage {
     }
     .width('100%')
     .alignItems(VerticalAlign.Center)
-
-    this.renderScaleController()
   }
 
-  @Builder renderScaleController(){
-    Text('Y轴平移')
+  /**
+   * 缩放
+   */
+  @Builder renderScaleController() {
+    Text(`X轴缩放-${this.mScaleX}倍`)
       .fontColor('#212121')
       .fontSize(14)
       .fontWeight(FontWeight.Medium)
-      .margin({ top: 10 })
+      .margin({ top: 20 })
 
     Row() {
-      Text('-50')
+      Text('0.5')
         .width(30)
         .fontColor('#212121')
         .fontSize(12)
 
       Slider({
-        min: -50,
-        max: 50,
-        step: 1,
+        value: this.mScaleX,
+        min: 0.5,
+        max: 2,
+        step: 0.1,
         style: SliderStyle.InSet,
         direction: Axis.Horizontal
       })
@@ -213,10 +224,46 @@ struct TransformPage {
         .layoutWeight(1)
         .margin({ top: 5 })
         .onChange((value: number, mode: SliderChangeMode) => {
-          this.mTranslateY = value
+          this.mScaleX = Math.round((value + Number.EPSILON) * 100) / 100
         })
 
-      Text('50')
+      Text('2.0')
+        .width(30)
+        .textAlign(TextAlign.End)
+        .fontColor('#212121')
+        .fontSize(12)
+    }
+    .width('100%')
+    .alignItems(VerticalAlign.Center)
+
+    Text(`Y轴缩放-${this.mScaleY}倍`)
+      .fontColor('#212121')
+      .fontSize(14)
+      .fontWeight(FontWeight.Medium)
+      .margin({ top: 10 })
+
+    Row() {
+      Text('0.5')
+        .width(30)
+        .fontColor('#212121')
+        .fontSize(12)
+
+      Slider({
+        value: this.mScaleY,
+        min: 0.5,
+        max: 2,
+        step: 0.1,
+        style: SliderStyle.InSet,
+        direction: Axis.Horizontal
+      })
+        .height(12)
+        .layoutWeight(1)
+        .margin({ top: 5 })
+        .onChange((value: number, mode: SliderChangeMode) => {
+          this.mScaleY = Math.round((value + Number.EPSILON) * 100) / 100
+        })
+
+      Text('2.0')
         .width(30)
         .textAlign(TextAlign.End)
         .fontColor('#212121')
