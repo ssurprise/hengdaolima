@@ -68,7 +68,10 @@ _________
 2. 权限管理-abilityAccessCtrl
 3. 通知-基础类型
 4. 通知管理-notificationManager
-5. 弹窗
-6. 拨打电话-telephony.call
-7. 设备信息-deviceInfo
-8. 像素单位转换
+5. 弹窗Dialog
+6. Toast
+7. 拨打电话-telephony.call
+8. 设备信息-deviceInfo
+9. 像素单位转换
+10. 定时器-Timer
+11. URL解析

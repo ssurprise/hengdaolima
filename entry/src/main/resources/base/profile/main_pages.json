@@ -45,6 +45,7 @@
     "practice/pages/PermissionPage",
     "practice/pages/TimeIntervalPage",
     "practice/pages/ToastPage",
+    "practice/pages/UrlParsePage",
     "practice/pages/PxAndVpPage",
     "practice/pages/AlertDialogPage",
     "practice/pages/NotificationPage",

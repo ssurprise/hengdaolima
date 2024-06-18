@@ -69,8 +69,9 @@ export struct DashboardComp {
       new CatalogItemInfo('拨打电话', 'practice/pages/CallPage'),
       new CatalogItemInfo('设备信息', 'practice/pages/DeviceInfoPage'),
       new CatalogItemInfo('App管理能力', 'practice/pages/AppManagerPage'),
+      new CatalogItemInfo('Url解析', 'practice/pages/UrlParsePage'),
       new CatalogItemInfo('Px<=>Vp', 'practice/pages/PxAndVpPage')]
-    ]
+  ]
   ])
 
   build() {
